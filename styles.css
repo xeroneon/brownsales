@@ -70,13 +70,13 @@ footer a {
 #hero-2 {
     float: right;
     color: #FFF;
-    font-size: 30px;
+    font-size: 40px;
     margin: 0;
     padding: 0;
 }
 
 #hero-2-parent {
-    margin-top: 70px;
+    margin-top: 45px;
 }
 
 #nav-logo {
@@ -99,6 +99,7 @@ footer a {
 
 #flooring {
     background:url(img/flooring.jpg) center bottom no-repeat;
+    background-size: 100%;
     height: 250px;
     margin-top: 15px;
     color: #FFF;
@@ -106,13 +107,15 @@ footer a {
 
 #flooring p {
     width: 60%;
+    font-size: 20px;
     margin: 50px auto 0px auto;
     font-weight: bold;
+    margin-bottom: 30px;
     
 }
 
 #flooring a {
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 #hours {
@@ -135,7 +138,7 @@ hr {
   }
 
   .main-btn {
-      font-size: 10px;
+      font-size: 16px;
       border: none;
       cursor: pointer;
       /* background: brown; */
@@ -149,11 +152,14 @@ hr {
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#644727', endColorstr='#815523',GradientType=0 ); /* IE6-9 */
   }
 
-  .heading {font-size:20px;border-top: 2px solid #000;}
-  .heading span { position: relative; top: -15px; padding: 10px; background: white;}
+  .heading {font-size:30px;border-top: 2px solid #000; margin-top: 50px; font-weight: bold;}
+  .heading span { position: relative; top: -23px; padding: 10px; background: white;}
 
   @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     /* Styles */
+    .main-btn {
+        font-size: 10px;
+    }
 
     #hero {
         height: 150px;
@@ -180,14 +186,16 @@ hr {
 
     #flooring p {
         width: 80%;
+        font-size: 12px;
         margin: 10px auto 0px auto;
         font-weight: bold;
+        margin-bottom: 5px;
     }
 
     #flooring a {
         margin-top: 5px;
     }
 
-    .heading {font-size:12px;border-top: 2px solid #000;}
+    .heading {font-size:14px;border-top: 2px solid #000; margin-top: 20px;}
     .heading span { position: relative; top: -12px; padding: 10px; background: white;}
     }
