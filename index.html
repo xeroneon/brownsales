@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <!-- Compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -24,59 +26,79 @@
         <div id="hero-cover" class="col s12">
             <div class="row">
                 <img src="img/brown-sales-logo.png" class="col s5 l3" style="margin: 1%;" />
-                <p style="float:right; color: #FFF; margin: 5px;"><strong>602.914.4579</strong></p>
+                <p style="float:right; color: #000; margin: 5px; font-weight: bold;">602.914.4579</p>
             </div>
-            <div class="row" id="hero-2-parent">
+            <!-- <div class="row" id="hero-2-parent">
                 <p id="hero-2" class="col s7 l7"><strong>Delivering
                         high quality name brand <br /> furnishings</strong></p>
 
-            </div>
+            </div> -->
 
         </div>
     </div>
 
     <div id="container" class="container">
-        <!-- <hr> -->
 
-        <p class="heading"><span>All Of Your Favorite Brands</span></p>
-        <div class="row" style="margin-top: 40px;">
-            <a href="https://www.brownsalesfurnishings.com/_CGI/SEARCH3?PN=legends"><img class="col s3" src="img/legends.jpg" alt="legends"></a>
-            <a href="https://www.brownsalesfurnishings.com/_CGI/SEARCH3.HTML?MAN=ASHLEY"><img class="col s3" src="img/ashley.png" alt="ashley"></a>
-            <a href="https://www.brownsalesfurnishings.com/_CGI/SEARCH3?PN=coaster"><img class="col s3" src="img/coaster.png" alt="coaster"></a>
-            <a href="https://www.brownsalesfurnishings.com/_CGI/SEARCH3.HTML?MAN=LGPT"><img class="col s3" src="img/legget.png" alt="legget & platt"></a>
-        </div>
-        <div class="row">
-            <a href="https://www.brownsalesfurnishings.com/_CGI/SEARCH3.HTML?MAN=SER"><img class="col s3" src="img/serta.png" alt="serta"></a>
-            <a href="https://www.brownsalesfurnishings.com/_CGI/SEARCH3.HTML?MAN=SIMMONS"><img class="col s3" src="img/simmons.png" alt="simmons"></a>
-            <a href="https://www.brownsalesfurnishings.com/_CGI/SEARCH3.HTML?MAN=UTTERMOST"> <img class="col s3" src="img/uttermost.png" alt="uttermost"></a>
-            <a href="https://www.brownsalesfurnishings.com/_CGI/SEARCH3?PN=craftmade"><img class="col s3" src="img/craftmade.png" alt="craftmade"></a>
-        </div>
+        <hr>
+        <div class="row white-text">
+            <div class=" col s12 m6">
+                <div id="furniture-showroom">
+                    <div class="overlay">
+                        <h5 style="font-weight: bold;">Find All Of Our Furnishings At<br><br><span>brownsalesfurnishings.com</span></h5>
 
-        <a href="https://www.brownsalesfurnishings.com/" class="main-btn">
-            brownsalesfurnishings.com
-        </a>
-
-        <p class="heading" style="margin-top: 40px;"><span>Clearance Items In Our Phoenix Warehouse</span></p>
-
-        <div class="row">
-
-            <a href="#"><img src="img/furniture-image.png" class="col s6" /></a>
-            <a href="#"><img src="img/tile-image.png" class="col s6" /></a>
-        </div>
-        <div class="row">
-
-            <a href="#"><img src="img/lighting-image.png" class="col s6" /></a>
-            <a href="#"><img src="img/carpet-image.png" class="col s6" /></a>
-        </div>
-        <div class="row">
-
-            <a href="#"><img src="img/mattress-image.png" class="col s6" /></a>
-            <a href="#"><img src="img/granite-image.png" class="col s6" /></a>
+                    </div>
+                </div>
+            </div>
+            <div class=" col s12 m6">
+                <a href="">
+                    <div id="carpet-showroom">
+                        <div class="overlay">
+    
+                            <h5 style="font-weight: bold;">Find All Of Our Carpeting At<br><br> <span>brownsalescarpets.com</span></h5>
+                        </div>
+    
+                    </div>
+                </a>
+            </div>
         </div>
 
         <hr>
 
-        <div class="row">
+        <div class="carousel carousel-slider center">
+            <div class="carousel-fixed-item top white-text">
+                    <h5 style="padding: 10px;">Brown Sales Flooring specializes in replacement flooring for the multi-family housing industry in the
+                            Phoenix Area</h5>
+        
+                        <a href="https://www.brownsalesinteriors.com" class="main-btn">
+                            brownsalesinteriors.com
+                        </a>
+            </div>
+            <div class="carousel-item black white-text" id="car-1" href="#one!">
+                <div class="overlay">
+                    &nbsp;
+                </div>
+
+            </div>
+            <div class="carousel-item black white-text" id="car-2" href="#two!">
+                    <div class="overlay">
+                            &nbsp;
+                        </div>
+            </div>
+            <div class="carousel-item black white-text" id="car-3" href="#three!">
+                    <div class="overlay">
+                            &nbsp;
+                        </div>
+            </div>
+            <div class="carousel-item black white-text" id="car-4" href="#four!">
+                    <div class="overlay">
+                            &nbsp;
+                        </div>
+            </div>
+        </div>
+
+        <!-- <hr> -->
+
+        <!-- <div class="row">
             <div class="col s12" id="flooring">
                 <p>Brown Sales Flooring specializes in replacement flooring for the multi-family housing industry in the
                     Phoenix Area</p>
@@ -85,10 +107,56 @@
                     brownsalesinteriors.com
                 </a>
             </div>
+        </div> -->
+        <!-- <hr> -->
 
+        <p class="heading" style="margin-top: 40px;"><span>Clearance Items In Our Phoenix Warehouse</span></p>
+        <p>Up to 75% off all clearance items</p>
+        <br />
+
+        <div class="row clearance">
+
+            <a href="#"><img src="img/furniture-image.png" class="col s12 m6" /></a>
+            <a href="#"><img src="img/tile-image.png" class="col s12 m6" /></a>
+        </div>
+        <div class="row clearance">
+
+            <a href="#"><img src="img/lighting-image.png" class="col s12 m6" /></a>
+            <a href="#"><img src="img/carpet-image.png" class="col s12 m6" /></a>
+        </div>
+        <div class="row clearance">
+
+            <a href="#"><img src="img/mattress-image.png" class="col s12 m6" /></a>
+            <a href="#"><img src="img/granite-image.png" class="col s12 m6" /></a>
         </div>
 
-        <hr>
+        <p class="heading"><span>All Of Your Favorite Brands</span></p>
+        <div class="row" style="margin-top: 40px;">
+            <a href="https://www.brownsalesfurnishings.com/_CGI/SEARCH3?PN=legends"><img class="col s3"
+                    src="img/legends.jpg" alt="legends"></a>
+            <a href="https://www.brownsalesfurnishings.com/_CGI/SEARCH3.HTML?MAN=ASHLEY"><img class="col s3"
+                    src="img/ashley.png" alt="ashley"></a>
+            <a href="https://www.brownsalesfurnishings.com/_CGI/SEARCH3?PN=coaster"><img class="col s3"
+                    src="img/coaster.png" alt="coaster"></a>
+            <a href="https://www.brownsalesfurnishings.com/_CGI/SEARCH3.HTML?MAN=LGPT"><img class="col s3"
+                    src="img/legget.png" alt="legget & platt"></a>
+        </div>
+        <div class="row">
+            <a href="https://www.brownsalesfurnishings.com/_CGI/SEARCH3.HTML?MAN=SER"><img class="col s3"
+                    src="img/serta.png" alt="serta"></a>
+            <a href="https://www.brownsalesfurnishings.com/_CGI/SEARCH3.HTML?MAN=SIMMONS"><img class="col s3"
+                    src="img/simmons.png" alt="simmons"></a>
+            <a href="https://www.brownsalesfurnishings.com/_CGI/SEARCH3.HTML?MAN=UTTERMOST"> <img class="col s3"
+                    src="img/uttermost.png" alt="uttermost"></a>
+            <a href="https://www.brownsalesfurnishings.com/_CGI/SEARCH3?PN=craftmade"><img class="col s3"
+                    src="img/craftmade.png" alt="craftmade"></a>
+        </div>
+
+        <a href="https://www.brownsalesfurnishings.com/" class="main-btn">
+            brownsalesfurnishings.com
+        </a>
+
+        <hr style="margin-top: 40px;">
 
         <div class="row">
             <div class="col s12 m6" id="hours">
@@ -146,6 +214,8 @@
         <img src="img/facebook.png" width="30px" />
         <a href="#">Privacy Policy</a>
     </footer>
+
+    <script src="app.js" type="text/javascript"></script>
 
 </body>
 
