@@ -3,6 +3,10 @@
     margin: 25px;
 }
 
+.brand-icon {
+    max-width: 25%;
+}
+
 button {
     border: none;
 }
@@ -43,13 +47,17 @@ button:hover {
     margin: 40px 0;
 }
 
+.clearance-categories.clearance {
+    flex-wrap: nowrap;
+}
+
 .clearance .category-card {
     max-width: 15%;
 }
 
 .category-card {
     margin: 10px;
-    max-width: 650px;
+    max-width: 600px;
 }
 
 .category-card img {
@@ -67,14 +75,16 @@ footer {
 
 .footer-hours-wrapper,
 .footer-contact-wrapper {
-    width: 50%;
+    width: 35%;
     margin: auto;
+    margin: 10px
 }
 
 .footer-brands {
     width: 75%;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 50px;
 }
 
 footer,
@@ -82,6 +92,7 @@ footer,
 .footer-hours-saturday,
 .footer-hours-sunday,
 .footer-contacts,
+.footer-contact-container,
 .footer-brands {
     display: flex;
 }
@@ -91,7 +102,6 @@ footer,
 .footer-hours-sunday {
     flex-wrap: nowrap;
     justify-content: space-between;
-    padding-right: 50px
 }
 
 .home-clearance-header {
@@ -104,6 +114,18 @@ footer,
 .footer-hours-sunday p:first-of-type,
 .footer-contact-container {
     text-indent: 25px;
+}
+
+.footer-hours-weekday p:nth-of-type(2),
+.footer-hours-saturday p:nth-of-type(2),
+.footer-hours-sunday p:nth-of-type(2) {
+    width: 150px;
+    text-align: left;
+}
+
+.footer-contact-container {
+    align-items: flex-end;
+    justify-content: space-between;
 }
 
 .footer-contacts {
@@ -133,4 +155,21 @@ footer,
 
 .footer-links a {
     margin: 8px 10px;
+}
+
+.clearance-items-wrapper {
+    margin: 25px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 75%;
+}
+
+.clearance-item img {
+    max-width: 250px;
+    margin: auto;
+}
+
+.clearance-item {
+    margin: 50px 25px;
 }
