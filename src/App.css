@@ -40,12 +40,16 @@ button:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 40px 0;
+}
+
+.clearance .category-card {
+    max-width: 15%;
 }
 
 .category-card {
     margin: 10px;
     max-width: 650px;
-    min-width: 300px;
 }
 
 .category-card img {
