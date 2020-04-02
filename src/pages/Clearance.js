@@ -47,6 +47,7 @@ const Clearance = () => {
                 {clearanceItems ?
                     clearanceItems
                     .filter(item => currentCategory ? item.fields.category.toLowerCase() === currentCategory : item)
+                    .filter(item => item.fields.quantity > 0)
                     .map((item, ind) => (
 
                         <ItemCard
