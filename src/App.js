@@ -6,7 +6,7 @@ import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Clearance from './pages/Clearance';
 import { ClearanceItemsContext } from './Context';
-import contentful from 'contentful';
+const contentful = require('contentful');
 
 const contentfulAPI = contentful.createClient({
     space: process.env.REACT_APP_SPACE,
@@ -18,18 +18,18 @@ function App() {
 
     return (
         <>
-            <ClearanceItemsContext.Provider value={{ contentfulAPI, clearanceItems, setClearanceItems }}>
                 <Nav />
                 <Switch>
                     <Route exact path='/'>
                         <Home />
                     </Route>
-                    <Route path='/clearance'>
-                        <Clearance />
-                    </Route>
+                    <ClearanceItemsContext.Provider value={{ contentfulAPI, clearanceItems, setClearanceItems }}>
+                        <Route path='/clearance'>
+                            <Clearance />
+                        </Route>
+                    </ClearanceItemsContext.Provider>
                 </Switch>
                 <Footer />
-            </ClearanceItemsContext.Provider>
         </>
     );
 }
