@@ -6,7 +6,8 @@ const categories = [
     {name: 'Carpet', src: '/img/carpet-image.png'},
     {name: 'Tile', src: '/img/tile-image.png'},
     {name: 'Granite & Quartz', src: '/img/granite-image.png'},
-    {name: 'Ceiling Fans & Lighting', src: '/img/lighting-image.png'},
+    {name: 'Lighting', src: '/img/lighting-image.png'},
+    {name: 'Ceiling Fans', src: '/img/fan-image.png'},
     {name: 'Furniture', src: '/img/furniture-image.png'}
 ];
 
