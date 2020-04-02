@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { ClearanceItemsContext } from '../Context';
 import CategoryCards from '../components/CategoryCard'
+import ItemCard from '../components/ItemCards';
 
 const Clearance = () => {
     const { contentfulAPI, clearanceItems, setClearanceItems } = useContext(ClearanceItemsContext);
@@ -13,6 +14,12 @@ const Clearance = () => {
 
     return (
         <>
+
+            <div className='home-clearance-header'>
+                <h2>Clearance Items In Our Phoenix Warehouse</h2>
+                <p>Up to 75% off all clearance items</p>
+            </div>
+
             <CategoryCards
             setCategory={setCategory}
             onClick
@@ -20,28 +27,25 @@ const Clearance = () => {
 
             <div className='clearance-items-wrapper'>
 
-                <div className='clearance-items'>
-                    {clearanceItems && 
-                        clearanceItems.filter(item =>
-                            category === 'all' ? item : item.fields.category.toLowerCase() === category.toLowerCase())
-                        .map(item => (
-                            <div className='clearance-item' key={item.fields.sku}>
-                                <img src={item.fields.imageLink} alt={item.fields.name} />
-                                <div className='clearance-item-desc'>
-                                    <h4>{item.fields.name}</h4>
-                                    <p className='item-sku'>{`ITEM# - ${item.fields.sku}`}</p>
-                                    <span className='item-org-pice'>{item.fields.orgPrice}</span>
-                                    <div>
-                                        <p>{item.fields.price}</p>
-                                        <p>{`${item.fields.quantity} in stock`}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        ))
-                        // :
-                        // null
-                    }
-                </div>
+                {clearanceItems &&
+                    clearanceItems
+                    .filter(item => category === 'all' ? item : item.fields.category.toLowerCase() === category.toLowerCase())
+                    .map(item => (
+
+                        <ItemCard
+                        key={item.fields.sku}
+                        price={item.fields.price}
+                        name={item.fields.name}
+                        desc={item.fields.description}
+                        sku={item.fields.sku}
+                        quantity={item.fields.quantity}
+                        imageLink={item.fields.imageLink}
+                        orgPrice={item.fields.orgPrice}
+                        />
+                    ))
+                    // :
+                    // null
+                }
             </div>
         </>
     )
