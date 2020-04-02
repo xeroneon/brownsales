@@ -6,9 +6,11 @@ const Nav = () => {
     return (
         <>
             <nav className='nav'>
-                <Link to='/'>
-                    <img src='/img/brown-sales-logo.png' alt='Brown Sales Logo' />
-                </Link>
+                <div>
+                    <Link to='/'>
+                        <img src='/img/brown-sales-logo.png' alt='Brown Sales Logo' />
+                    </Link>
+                </div>
             </nav>
         </>
     )
