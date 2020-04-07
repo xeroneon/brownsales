@@ -16,11 +16,16 @@ const CategoryCards = () => {
     return (
         <div className={`clearance-categories ${location.pathname.split('/')[1] === 'clearance' ? 'clearance' : ''}`}>
             {categories.map((cat, ind) => (
-                <Link to={`/clearance/${cat.name.toLowerCase().split(' ').join('-')}`}
+                <Link
+                to={`/clearance/${cat.name.toLowerCase().split(' ').join('-')}`}
                 className='category-card'
                 key={ind}
                 >
-                    <img className='category-link' src={cat.src} alt={`${cat.name} Clearance Items`} />
+                    <img
+                    className='category-link'
+                    src={cat.src}
+                    alt={`${cat.name} Clearance Items`}
+                    />
                 </Link>
             ))}
         </div>
