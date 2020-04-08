@@ -7,6 +7,15 @@ import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon as FAIcon } from '@fortawesome/react-fontawesome';
 import { ClipLoader as Loading } from 'react-spinners';
 
+const categories = [
+    {name: 'Mattress', src: '/img/mattress-image.png'},
+    {name: 'Carpet', src: '/img/carpet-image.png'},
+    {name: 'Tile', src: '/img/tile-image.png'},
+    {name: 'Granite & Quartz', src: '/img/granite-image.png'},
+    {name: 'Lighting', src: '/img/lighting-image.png'},
+    {name: 'Ceiling Fans', src: '/img/fan-image.png'}
+];
+
 const Clearance = () => {
     const { contentfulAPI, clearanceItems, setClearanceItems } = useContext(ClearanceItemsContext);
     const [category, setCategory] = useState();
@@ -16,12 +25,17 @@ const Clearance = () => {
 
     useEffect(() => {
         // Get items from contentful
-        contentfulAPI.getEntries().then(entries => {
-            setClearanceItems(entries.items)
+        contentfulAPI.getEntries('stockItems').then(entries => {
+            console.log(entries)
+            setClearanceItems(entries.items.filter(entry => entry.sys.contentType.sys.id === 'clearanceItems'))
             if(location.pathname.split('/')[2]){
                 setCategory(location.pathname.split('/')[2].split('-').join(' ').toLowerCase());
             }
         });
+
+        return () => {
+            setClearanceItems();
+        }
     }, []);
     
     useEffect(() => {
@@ -49,6 +63,7 @@ const Clearance = () => {
 
             <CategoryCards
             setCurrentCategory={setCategory}
+            categories={categories}
             />
 
             <div
