@@ -5,7 +5,8 @@ import Home from './pages/Home';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Clearance from './pages/Clearance';
-import { ClearanceItemsContext } from './Context';
+import Stock from './pages/Stock';
+import { ClearanceItemsContext, StockItemsContext } from './Context';
 const contentful = require('contentful');
 
 const contentfulAPI = contentful.createClient({
@@ -15,21 +16,27 @@ const contentfulAPI = contentful.createClient({
 
 function App() {
     const [clearanceItems, setClearanceItems] = useState();
+    const [stockItems, setStockItems] = useState();
 
     return (
         <>
-                <Nav />
-                <Switch>
-                    <Route exact path='/'>
-                        <Home />
-                    </Route>
+            <Nav />
+            <Route exact path='/'>
+                <Home />
+            </Route>
+            <Switch>
+                <Route path='/clearance'>
                     <ClearanceItemsContext.Provider value={{ contentfulAPI, clearanceItems, setClearanceItems }}>
-                        <Route path='/clearance'>
-                            <Clearance />
-                        </Route>
+                        <Clearance />
                     </ClearanceItemsContext.Provider>
-                </Switch>
-                <Footer />
+                </Route>
+                <Route path='/stock'>
+                    <StockItemsContext.Provider value={{contentfulAPI, stockItems, setStockItems}}>
+                        <Stock />
+                    </StockItemsContext.Provider>
+                </Route>
+            </Switch>
+            <Footer />
         </>
     );
 }
