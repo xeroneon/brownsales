@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../../img/brown-sales-logo.png';
 
 const Nav = () => {
 
@@ -8,7 +9,7 @@ const Nav = () => {
             <nav className='nav'>
                 <div>
                     <Link to='/'>
-                        <img src='/img/brown-sales-logo.png' alt='Brown Sales Logo' />
+                        <img src={logo} alt='Brown Sales Logo' />
                     </Link>
                 </div>
             </nav>
