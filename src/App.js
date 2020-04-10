@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
-import Clearance from './pages/Clearance';
-import Stock from './pages/Stock';
-import { ClearanceItemsContext, StockItemsContext } from './Context';
+import Items from './pages/Items';
+import { ItemsContext } from './utils/Context';
 const contentful = require('contentful');
 
 const contentfulAPI = contentful.createClient({
@@ -15,8 +14,7 @@ const contentfulAPI = contentful.createClient({
 })
 
 function App() {
-    const [clearanceItems, setClearanceItems] = useState();
-    const [stockItems, setStockItems] = useState();
+    const [items, setItems] = useState();
 
     return (
         <>
@@ -24,18 +22,11 @@ function App() {
             <Route exact path='/'>
                 <Home />
             </Route>
-            <Switch>
-                <Route path='/clearance'>
-                    <ClearanceItemsContext.Provider value={{ contentfulAPI, clearanceItems, setClearanceItems }}>
-                        <Clearance />
-                    </ClearanceItemsContext.Provider>
+            <ItemsContext.Provider value={{ contentfulAPI, items, setItems }}>
+                <Route path='/(clearance|stock)'>
+                    <Items />
                 </Route>
-                <Route path='/stock'>
-                    <StockItemsContext.Provider value={{contentfulAPI, stockItems, setStockItems}}>
-                        <Stock />
-                    </StockItemsContext.Provider>
-                </Route>
-            </Switch>
+            </ItemsContext.Provider>
             <Footer />
         </>
     );
