@@ -16,7 +16,7 @@ button:hover {
 }
 
 .nav {
-    background: url('/img/hero-6.jpg') center center no-repeat;
+    background: url(./img/hero-6.jpg) center center no-repeat;
     background-size: cover;
     height: 450px;
     padding-top: 50px;
@@ -39,7 +39,9 @@ button:hover {
     margin-left: 50px;
 }
 
-.clearance-categories {
+.clearance-categories,
+.stock-categories,
+.-categories {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -104,7 +106,8 @@ footer,
     justify-content: space-between;
 }
 
-.home-clearance-header {
+.home-clearance-header,
+.home-stock-header {
     text-align: center;
     margin: 25px 0;
 }
@@ -157,39 +160,55 @@ footer,
     margin: 8px 10px;
 }
 
-.clearance-items-wrapper {
+.clearance-items-wrapper,
+.stock-items-wrapper {
     margin: 25px auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     width: 75%;
-    overflow: hidden;
     transition: height .5s;
     position: relative;
+    padding-bottom: 50px;
 }
 
-.clearance-item img {
+.clearance-item img,
+.stock-item img {
     width: 250px;
     margin: auto;
 }
 
-.clearance-item {
-    margin: 50px 25px;
+.clearance-item,
+.stock-item {
+    margin: 50px;
     height: 350px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.clearance-load {
+.item-desc {
+    text-align: center;
+}
+
+.clearance-load,
+.stock-load {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
     font-size: 24px;
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    height: 75px;
+    background-color: #ccc;
+    padding: 0 5px 0 5px;
+    border-radius: 5px;
 }
 
-.clearance-load:hover {
+.clearance-load:hover,
+.stock-load:hover {
     cursor: pointer;
 }
 
@@ -198,4 +217,10 @@ footer,
     width: 100%;
     font-size: 32px;
     margin-top: 100px;
+}
+
+.loading {
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 50px;
 }
