@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Brands from './Brands';
 import Hours from './Hours';
 import Contact from './Contact';
+import facebook from '../../img/facebook.png'
 
 const Footer = () => {
 
@@ -21,7 +21,7 @@ const Footer = () => {
                     target='_blank'
                     rel='noopener noreferrer'
                     >
-                        <img src='/img/facebook.png' alt='Facebook' />
+                        <img src={facebook} alt='Facebook' />
                     </a>
                     <a href='/#' >Privacy Policy</a>
                 </div>

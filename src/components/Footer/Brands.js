@@ -1,14 +1,22 @@
 import React from 'react';
+import serta from '../../img/serta.png';
+import craftmade from '../../img/craftmade.png';
+import ashley from '../../img/ashley.png';
+import coaster from '../../img/coaster.png';
+import legends from '../../img/legends.jpg';
+import legget from '../../img/legget.png';
+import uttermost from '../../img/uttermost.png';
+import simmons from '../../img/simmons.png'
 
 const brands = [
-    {name: 'Serta', src: '/img/serta.png', url: 'https://www.serta.com'},
-    {name: 'Craftmade', src: '/img/craftmade.png', url: 'https://www.craftmade.com'},
-    {name: 'Ashley', src: '/img/ashley.png', url: 'https://www.ashleyfurniture.com'},
-    {name: 'Coaster', src: '/img/coaster.png', url: 'https://www.coasterfurniture.com'},
-    {name: 'Legends', src: '/img/legends.jpg', url: 'https://www.legendsfurniture.com'},
-    {name: 'Legget & Platt', src: '/img/legget.png', url: 'https://www.leggett.com'},
-    {name: 'Uttermost', src: '/img/uttermost.png', url: 'https://www.uttermost.com'},
-    {name: 'Simmons', src: '/img/simmons.png', url: 'https://www.simmons.com'},
+    {name: 'Serta', src: serta, url: 'https://www.serta.com'},
+    {name: 'Craftmade', src: craftmade, url: 'https://www.craftmade.com'},
+    {name: 'Ashley', src: ashley, url: 'https://www.ashleyfurniture.com'},
+    {name: 'Coaster', src: coaster, url: 'https://www.coasterfurniture.com'},
+    {name: 'Legends', src: legends, url: 'https://www.legendsfurniture.com'},
+    {name: 'Legget & Platt', src: legget, url: 'https://www.leggett.com'},
+    {name: 'Uttermost', src: uttermost, url: 'https://www.uttermost.com'},
+    {name: 'Simmons', src: simmons, url: 'https://www.simmons.com'},
 ];
 
 const Brands = () => {
