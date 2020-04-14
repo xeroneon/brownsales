@@ -1,15 +1,15 @@
 import React from 'react';
-import CategoryCard from '../components/CategoryCard';
+// import CategoryCard from '../components/CategoryCard';
 import { Link } from 'react-router-dom';
 
-const categories = [
-    {name: 'Mattress'},
-    {name: 'Carpet'},
-    {name: 'Tile'},
-    {name: 'Granite & Quartz'},
-    {name: 'Lighting'},
-    // {name: 'Ceiling Fans', src: fans}
-];
+// const categories = [
+//     {name: 'Mattress'},
+//     {name: 'Carpet'},
+//     {name: 'Tile'},
+//     {name: 'Granite & Quartz'},
+//     {name: 'Lighting'},
+//     // {name: 'Ceiling Fans', src: fans}
+// ];
 
 const Home = () => {
 
@@ -27,9 +27,9 @@ const Home = () => {
                 <p>Up to 75% off all clearance items</p>
             </div>
 
-            <CategoryCard
-            categories={categories}
-            />
+            <Link to='/clearance'>
+                <p>Clearance Items</p>
+            </Link>
         </>
     )
 }
