@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useContext, useRef } from 'react';
-import { ItemsContext } from '../utils/Context';
+import React, { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon as FAIcon } from '@fortawesome/react-fontawesome';
@@ -16,51 +15,39 @@ const categories = [
     {name: 'Ceiling Fans'}
 ];
 
-const Items = () => {
+const Items = ({ contentfulAPI }) => {
     const headerRef = useRef(null);
-    const { contentfulAPI, items, setItems } = useContext(ItemsContext);
+    const [items, setItems] = useState();
     const [category, setCategory] = useState();
     const [showImg, setShowImg] = useState(6);
     const [skipItems, setSkipItems] = useState(0);
+    const [totalItems, setTotalItems] = useState(1);
     const location = useLocation();
     const pathname = location.pathname.split('/')
-
-    useEffect(() => {
-        // Get items from contentful
-        contentfulAPI.getEntries({
-            content_type: pathname[1] === 'clearance' ? 'clearanceItems' : 'stockItems',
-            skip: skipItems})
-        .then(entries => {
-            setItems(
-                () => items ?
-                    [...items, ...entries.items]
-                :
-                    entries.items
-            );
-
-            if(location.pathname.split('/')[2]){
-                setCategory(pathname[2].split('-').join(' ').toLowerCase());
-            }
-        });
-
-        return () => {
-            setItems();
-            setSkipItems(0);
-        };
-
-    }, [skipItems]);
     
     useEffect(() => {
         setCategory(pathname[2] ?
-            pathname[2].split('-').join(' ').toLowerCase() :
+            pathname[2].split('-').join(' ') :
             'all'    
         );
-        if(items)
-            setShowImg(() => {
-                const images = items.filter(item => item.fields.category.toLowerCase() === category)
-                return images.length > 3 ? 6 : 3;
+    }, [pathname, category]);
+
+    useEffect(() => {
+        // Get items from contentful based on the path
+        if(skipItems < totalItems)
+            contentfulAPI.getEntries({
+                content_type: pathname[1] === 'clearance' ? 'clearanceItems' : 'stockItems',
+                'fields.category': pathname[2] ? pathname[2].split('-').join(' ') : '',
+                skip: skipItems
+            })
+            .then(entries => {
+                setTotalItems(entries.total !== 0 ? entries.total : 1);
+                setItems(prevItems => {
+                    if(entries.total === 0) return null;
+                    return prevItems && prevItems[0].fields.category === pathname[2] ? [...prevItems, ...entries.items] : entries.items;
+                });
             });
-    }, [location.pathname, items, category]);
+    }, [skipItems, location.pathname]);
 
     useEffect(() => {
         window.scrollTo({top: headerRef.current.offsetTop, behavior: 'smooth'})
@@ -85,10 +72,7 @@ const Items = () => {
                 </div>
             }
 
-            <CategoryCards
-            setCurrentCategory={setCategory}
-            categories={categories}
-            />
+            <CategoryCards categories={categories} />
 
             <div
             className={`${pathname[1]}-items-wrapper ${items ? '' : 'loading'}`}
@@ -97,10 +81,9 @@ const Items = () => {
 
                 {items ?
                     items
-                    .filter(item => category === 'all' ? item : item.fields.category.toLowerCase() === category)
                     // .filter(item => item.fields.quantity > 0)
                     .map((item, ind) => {
-                        console.log(ind, showImg)
+
                         if(ind >= showImg) return null;
 
                         return (
@@ -118,7 +101,7 @@ const Items = () => {
                             />
                         )
                     })
-                :
+                : totalItems !== 1 &&
                     <Loading
                     loading={true}
                     size={80}
@@ -126,16 +109,23 @@ const Items = () => {
                 
                 }
                 
-                {items && items.filter(item => item.fields.category.toLowerCase() === category).length < 1 && 
+                {totalItems === 1 && pathname[1] === 'clearance' && 
                     <p className={`${pathname[1]}-out`}>
                         All {category !== 'all' ? category : ''} clearance items currently sold out!
                     </p>
                 }
 
-                {items && items.filter(item => category ? item.fields.category.toLowerCase() === category : item).length - showImg - 1 > 0 &&
+                {items && items.length - showImg > 0 &&
                     <span
                     className={`${pathname[1]}-load`}
-                    onClick={() => setShowImg((items.filter(item => item.fields.category.toLowerCase() === category).length - showImg) < 4 ? showImg + 3 :showImg + 6)}
+                    onClick={() => {
+                        setSkipItems(prevSkip => 
+                            prevSkip < totalItems
+                            && items.length - 6 <= showImg
+                            && totalItems > 100 ? prevSkip + 100 : prevSkip
+                        );
+                        setShowImg(prevShown => (items.length - prevShown) < 4 ? prevShown + 3 : prevShown + 6);
+                    }}
                     >
                         <span>Load More</span>
                         <FAIcon
