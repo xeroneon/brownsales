@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 
-const ItemCard = ({sku, name, imageLink, price, quantity, orgPrice, index, showImg}) => {
+const ItemCard = ({sku, name, imageLink, price, quantity, orgPrice}) => {
     const location = useLocation();
     const pathname = location.pathname.split('/')
 
