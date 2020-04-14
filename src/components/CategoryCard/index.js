@@ -15,7 +15,7 @@ const CategoryCards = ({categories}) => {
         <div className={`${path[1]}-categories ${path[1]}`}>
             {categories.map((cat, ind) => (
                 <Link
-                to={`/${path[1] === 'stock' ? 'stock' : 'clearance'}/${cat.name.toLowerCase().split(' ').join('-')}`}
+                to={`/${path[1] === 'stock' ? 'stock' : 'clearance'}/${cat.name.split(' ').join('-')}`}
                 className='category-card'
                 key={ind}
                 >
