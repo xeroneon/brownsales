@@ -5,6 +5,12 @@ import { FontAwesomeIcon as FAIcon } from '@fortawesome/react-fontawesome';
 import { ClipLoader as Loading } from 'react-spinners';
 import CategoryCards from '../components/CategoryCard'
 import ItemCard from '../components/ItemCards';
+const contentful = require('contentful');
+
+const contentfulAPI = contentful.createClient({
+    space: process.env.REACT_APP_SPACE,
+    accessToken: process.env.REACT_APP_SECRET
+})
 
 const categories = [
     {name: 'Mattress'},
@@ -15,13 +21,14 @@ const categories = [
     {name: 'Ceiling Fans'}
 ];
 
-const Items = ({ contentfulAPI }) => {
+const Items = () => {
     const headerRef = useRef(null);
+    const itemRef = useRef(null);
     const [items, setItems] = useState();
     const [category, setCategory] = useState();
     const [showImg, setShowImg] = useState(6);
     const [skipItems, setSkipItems] = useState(0);
-    const [totalItems, setTotalItems] = useState(1);
+    const [totalItems, setTotalItems] = useState(0);
     const location = useLocation();
     const pathname = location.pathname.split('/')
     
@@ -34,24 +41,36 @@ const Items = ({ contentfulAPI }) => {
 
     useEffect(() => {
         // Get items from contentful based on the path
-        if(skipItems < totalItems)
-            contentfulAPI.getEntries({
-                content_type: pathname[1] === 'clearance' ? 'clearanceItems' : 'stockItems',
-                'fields.category': pathname[2] ? pathname[2].split('-').join(' ') : '',
-                skip: skipItems
-            })
-            .then(entries => {
-                setTotalItems(entries.total !== 0 ? entries.total : 1);
-                setItems(prevItems => {
-                    if(entries.total === 0) return null;
-                    return prevItems && prevItems[0].fields.category === pathname[2] ? [...prevItems, ...entries.items] : entries.items;
-                });
+        if(totalItems < 0){
+            setTotalItems(0);
+        }
+
+        contentfulAPI.getEntries({
+            content_type: pathname[1] === 'clearance' ? 'clearanceItems' : 'stockItems',
+            'fields.category': pathname[2] ? pathname[2].split('-').join(' ') : '',
+            skip: skipItems
+        })
+        .then(entries => {
+            setTotalItems(entries.total !== 0 ? entries.total : -1);
+            setShowImg(entries.total > 0 && entries.total > 3 ? 6 : 3);
+            setItems(prevItems => {
+                if(entries.total === 0) return null;
+                return prevItems && prevItems[0].fields.category === pathname[2] ? [...prevItems, ...entries.items] : entries.items;
             });
+        });
     }, [skipItems, location.pathname]);
 
     useEffect(() => {
-        window.scrollTo({top: headerRef.current.offsetTop, behavior: 'smooth'})
+        window.scrollTo(0, headerRef.current.offsetTop - 200)
     }, [])
+    
+    useEffect(() => {
+        const timedScroll = setTimeout(() => 
+            window.scrollTo({top: itemRef.current.offsetTop + showImg * 200 - 1200, behavior: 'smooth'})
+        , 500);
+
+        return () => clearTimeout(timedScroll);
+    }, [showImg, location.pathname])
 
     return (
         <>
@@ -76,13 +95,14 @@ const Items = ({ contentfulAPI }) => {
 
             <div
             className={`${pathname[1]}-items-wrapper ${items ? '' : 'loading'}`}
-            style={{height: `${showImg * 150}px`}}
+            style={{height: `${showImg * 200}px`}}
+            ref={itemRef}
             >
 
                 {items ?
                     items
                     // .filter(item => item.fields.quantity > 0)
-                    .map((item, ind) => {
+                    .map((item, ind, arr) => {
 
                         if(ind >= showImg) return null;
 
@@ -92,16 +112,11 @@ const Items = ({ contentfulAPI }) => {
                             price={item.fields.price}
                             name={item.fields.name}
                             desc={item.fields.description}
-                            sku={item.fields.sku}
-                            quantity={item.fields.quantity}
                             imageLink={item.fields.imageLink}
-                            orgPrice={item.fields.orgPrice}
-                            index={ind}
-                            showImg={showImg}
                             />
                         )
                     })
-                : totalItems !== 1 &&
+                : totalItems === 0 &&
                     <Loading
                     loading={true}
                     size={80}
@@ -109,7 +124,7 @@ const Items = ({ contentfulAPI }) => {
                 
                 }
                 
-                {totalItems === 1 && pathname[1] === 'clearance' && 
+                {totalItems === -1 && pathname[1] === 'clearance' && 
                     <p className={`${pathname[1]}-out`}>
                         All {category !== 'all' ? category : ''} clearance items currently sold out!
                     </p>
