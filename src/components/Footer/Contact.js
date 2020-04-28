@@ -1,6 +1,6 @@
 import React from 'react';
 import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
-import { faLayerGroup, faCircle } from '@fortawesome/free-solid-svg-icons';
+import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon as FAIcon } from '@fortawesome/react-fontawesome';
 
 const Contact = () => {
@@ -9,7 +9,7 @@ const Contact = () => {
         <>
             <div className='footer-contact-wrapper'>
                 
-                <h2>Contact</h2>
+                <h2 className='footer-header'>Contact</h2>
                 
                 <div className='footer-contact-container'>
                     

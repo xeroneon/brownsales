@@ -6,7 +6,7 @@ const Hours = () => {
         <>
             <div className='footer-hours-wrapper'>
                     
-            <h2>Hours</h2>
+            <h2 className='footer-header'>Hours</h2>
             
             <div className='footer-hours-container'>
                 <div className='footer-hours-weekday'>
