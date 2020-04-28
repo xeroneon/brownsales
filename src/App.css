@@ -69,13 +69,14 @@ button:hover {
 footer {
     flex-wrap: wrap;
     margin-bottom: 100px;
-    /* flex-direction: column; */
     justify-content: space-evenly;
+    font-size: 32px;
     margin: 50px 0;
     color: #ffffff;
     position: relative;
     background-color: #68441C;
-    padding: 100px 0;
+    padding: 150px 0 0;
+    height: 550px;
 }
 
 .footer-hours-wrapper,
@@ -111,6 +112,11 @@ footer {
 .footer-facebook-icon {
     font-size: 48px;
     top: -5px;
+}
+
+.footer-header {
+    font-size: 44px;
+    font-weight: bold;
 }
 
 .footer-brand-header {
@@ -150,7 +156,6 @@ footer,
 .footer-hours-saturday,
 .footer-hours-sunday {
     flex-wrap: nowrap;
-    justify-content: space-between;
 }
 
 .home-clearance-header,
@@ -164,18 +169,21 @@ footer,
 .footer-hours-sunday p:first-of-type,
 .footer-contact-container {
     text-indent: 25px;
+    width: 260px;
+    margin-right: 25px;
 }
 
 .footer-hours-weekday p:nth-of-type(2),
 .footer-hours-saturday p:nth-of-type(2),
 .footer-hours-sunday p:nth-of-type(2) {
-    width: 150px;
+    width: 300px;
     text-align: left;
 }
 
 .footer-contact-container {
     flex-direction: column;
     justify-content: space-between;
+    width: 100%;
 }
 
 .footer-contact-container > div {
@@ -184,7 +192,7 @@ footer,
 }
 
 .footer-contact-container > div > label {
-    width: 82px;
+    width: 150px;
     margin-right: 25px;
 }
 
@@ -199,10 +207,12 @@ footer,
     text-align: center;
     margin: 20px 0 -50px;
     display: flex;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
     position: absolute;
     bottom: 0;
+    font-size: 24px;
 }
 
 .footer img {
@@ -222,8 +232,6 @@ footer,
 .clearance-items-wrapper,
 .stock-items-wrapper {
     margin: 25px auto;
-    /* display: grid; */
-    /* grid-template-columns: 1fr 1fr 1fr; */
     display: flex;
     flex-wrap: wrap;
     width: 75%;
