@@ -22,9 +22,9 @@ const brands = [
 const Brands = () => {
 
     return (
-        <>
-            <h2>All Of Your Favorite Brands</h2>
+        <div className='footer-brands-wrapper'>
             <div className='footer-brands'>        
+                <h2 className='footer-brand-header'>All Of Your Favorite Brands</h2>
                 {brands.map(brand => (
                     
                     <a
@@ -40,7 +40,7 @@ const Brands = () => {
                     </a>
                 ))}
             </div>
-        </>
+        </div>
     )
 }
 
