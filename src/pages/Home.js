@@ -23,8 +23,8 @@ const Home = () => {
             </div>
 
             <div className='home-clearance-header'>
-                <h2>Clearance Items In Our Phoenix Warehouse</h2>
-                <p>Up to 75% off all clearance items</p>
+                <h2>Special Buy Items In Our Phoenix Warehouse</h2>
+                <p>Up to 75% off all these items!</p>
             </div>
 
             <Link to='/clearance'>
