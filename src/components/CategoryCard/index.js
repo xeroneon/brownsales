@@ -1,11 +1,11 @@
 import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
-import mattress from '../../img/mattress-image.png';
-import carpet from '../../img/carpet-image.png';
-import lighting from '../../img/lighting-image.png';
-import gAndQ from '../../img/granite-image.png';
-import tile from '../../img/tile-image.png';
-import fans from '../../img/fan.jpg'
+import mattress from '../../img/updatedphotos/mattresses.jpg';
+import carpet from '../../img/updatedphotos/carpet.jpg';
+import lighting from '../../img/updatedphotos/lighting.jpg';
+import gAndQ from '../../img/updatedphotos/granite.jpg';
+import tile from '../../img/updatedphotos/tile.jpg';
+import fans from '../../img/updatedphotos/lighting.jpg'
 
 const CategoryCards = ({categories}) => {
     const location = useLocation();

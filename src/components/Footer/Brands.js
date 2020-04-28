@@ -1,12 +1,12 @@
 import React from 'react';
-import serta from '../../img/serta.png';
-import craftmade from '../../img/craftmade.png';
-import ashley from '../../img/ashley.png';
-import coaster from '../../img/coaster.png';
-import legends from '../../img/legends.jpg';
-import legget from '../../img/legget.png';
-import uttermost from '../../img/uttermost.png';
-import simmons from '../../img/simmons.png'
+import serta from '../../img/updatedphotos/serta-logo.jpg';
+import craftmade from '../../img/updatedphotos/craftmade-logo.jpg';
+import ashley from '../../img/updatedphotos/ashley-logo.jpg';
+import coaster from '../../img/updatedphotos/coasterfurniture-logo.jpg';
+import legends from '../../img/updatedphotos/legends-logo.jpg';
+import legget from '../../img/updatedphotos/leggettplatt-logo.jpg';
+import uttermost from '../../img/updatedphotos/uttermost-logo.jpg';
+import simmons from '../../img/updatedphotos/simmons-logo.jpg';
 
 const brands = [
     {name: 'Serta', src: serta, url: 'https://www.serta.com'},
