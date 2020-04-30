@@ -4,16 +4,16 @@
     width: 100vw;
     min-height: 500px;
     max-height: 700px;
-    height: 70vh;
+    height: 60vh;
 
     &--logo {
-            width: 80%;
+        width: 70%;
         &__container {
             position: absolute;
             top: 24.6%;
             background-color: rgba(256,256,256, .85);
-            width: 67em;
-            height: 12.5em;
+            width: 48em;
+            height: 9em;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -35,24 +35,26 @@
             position: absolute;
             left: 50%;
             z-index: 10;
-            top: -140px;
+            top: -110px;
             transform: translateX(-50%);
             font-weight: 400;
 
             background-color: rgba($brown-primary, .85);
             color: #fff;
-            width: 43vw;
+            width: 41vw;
+            min-width: 600px;
             max-width: 820px;
-            font-size: 50px;
-            padding: 50px 80px;
+            font-size: 32px;
+            padding: 40px 67px;
         }
 
         h2 {
             position: relative;
-            padding-top: 100px;
+            padding-top: 65px;
+            margin-bottom: 55px;
             color: $brown-primary;
             font-weight: 400;
-            font-size: 50px;
+            font-size: 30px;
             text-transform: uppercase;
             display: inline-block;
 

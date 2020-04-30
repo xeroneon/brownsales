@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 // import CategoryCard from '../components/CategoryCard';
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 // const categories = [
 //     {name: 'Mattress'},
@@ -11,24 +11,10 @@ import { Link } from 'react-router-dom';
 //     // {name: 'Ceiling Fans', src: fans}
 // ];
 
-const Home = () => {
-
-    return (
-        <>
-
-            <div>
-                <Link to='/stock'>
-                    <p>Come see what we carry</p>
-                </Link>
-            </div>
-
-
-
-            <Link to='/clearance'>
-                <p>Clearance Items</p>
-            </Link>
-        </>
-    )
-}
+const Home = () => (
+  <Link to="/stock">
+    <p>Come see what we carry</p>
+  </Link>
+);
 
 export default Home;

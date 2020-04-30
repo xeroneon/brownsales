@@ -16,13 +16,15 @@ const Header = (props) => {
       <StyledHeader className="header" id="Header">
         <div className="header--logo__container">
           <Link to="/">
-            <img src={logo} alt="Brown Sales, INC" className="header--logo"/>
+            <img src={logo} alt="Brown Sales, INC" className="header--logo" />
           </Link>
         </div>
       </StyledHeader>
       <div className="header--message">
-        <h1>Clearance Items In Our Phoenix Warehouse</h1>
-        <h2>Up to 75% off all clearance items!</h2>
+        <h1>Clearance Items In Our Phoenix Warehouse</h1>{" "}
+        <Link to="/clearance">
+          <h2>Up to 75% off all clearance items!</h2>
+        </Link>
       </div>
     </>
   );

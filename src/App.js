@@ -24,7 +24,7 @@ function App() {
     return (
         <>
             <Header />
-            {/* <Nav /> */}
+            <Nav />
             <Route exact path='/'>
                 <Home />
             </Route>
