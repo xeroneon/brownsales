@@ -1,11 +1,8 @@
-.brand-icon > img {
-    width: 200px;
-    margin: 25px;
-}
 
-.brand-icon {
-    max-width: 25%;
-}
+@import './styles/util/variables';
+@import './styles/layout/header';
+
+
 
 button {
     border: none;
@@ -13,30 +10,6 @@ button {
 
 button:hover {
     cursor: pointer;
-}
-
-.nav {
-    background: url(./img/hero-6.jpg) center center no-repeat;
-    background-size: cover;
-    height: 450px;
-    padding-top: 50px;
-}
-
-.nav div:first-of-type {
-    background-color: #E4E4E4;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    width: 35%;
-    max-width: 500px;
-    display: flex;
-    align-items: center;
-    padding: 10px 0;
-    opacity: .75;
-}
-
-.nav img {
-    width: 75%;
-    margin-left: 50px;
 }
 
 .clearance-categories,

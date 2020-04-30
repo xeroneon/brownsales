@@ -1,12 +1,20 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import './App.css';
-import Home from './pages/Home';
+
+// STYLESHEET
+import './App.scss';
+
+// COMPONENTS
+import Header from './components/Header'
 import Nav from './components/Nav';
 import Footer from './components/Footer';
-import Items from './pages/Items';
-const contentful = require('contentful');
 
+// PAGES
+import Home from './pages/Home';
+import Items from './pages/Items';
+
+// API
+const contentful = require('contentful');
 const contentfulAPI = contentful.createClient({
     space: process.env.REACT_APP_SPACE,
     accessToken: process.env.REACT_APP_SECRET
@@ -15,7 +23,8 @@ const contentfulAPI = contentful.createClient({
 function App() {
     return (
         <>
-            <Nav />
+            <Header />
+            {/* <Nav /> */}
             <Route exact path='/'>
                 <Home />
             </Route>

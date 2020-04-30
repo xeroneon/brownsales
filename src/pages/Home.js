@@ -22,10 +22,7 @@ const Home = () => {
                 </Link>
             </div>
 
-            <div className='home-clearance-header'>
-                <h2>Clearance Items In Our Phoenix Warehouse</h2>
-                <p>Up to 75% off all clearance items</p>
-            </div>
+
 
             <Link to='/clearance'>
                 <p>Clearance Items</p>
