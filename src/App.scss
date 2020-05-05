@@ -1,8 +1,11 @@
 
 @import './styles/util/variables';
+@import './styles/util/mixins';
+
 @import './styles/layout/header';
 @import './styles/layout/nav';
-
+@import './styles/layout/brands';
+@import './styles/layout/footer';
 
 button {
     border: none;
@@ -39,99 +42,6 @@ button:hover {
     width: 100%;
 }
 
-footer {
-    flex-wrap: wrap;
-    margin-bottom: 100px;
-    flex-direction: column;
-    align-items: center;
-    margin: 50px 0;
-    color: #707070;
-}
-
-.footer-hours-wrapper,
-.footer-contact-wrapper {
-    width: 35%;
-    margin: auto;
-    margin: 10px
-}
-
-.footer-brands {
-    width: 75%;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 50px;
-}
-
-footer,
-.footer-hours-weekday,
-.footer-hours-saturday,
-.footer-hours-sunday,
-.footer-contacts,
-.footer-contact-container,
-.footer-brands {
-    display: flex;
-}
-
-.footer-hours-weekday,
-.footer-hours-saturday,
-.footer-hours-sunday {
-    flex-wrap: nowrap;
-    justify-content: space-between;
-}
-
-.home-clearance-header,
-.home-stock-header {
-    text-align: center;
-    margin: 25px 0;
-}
-
-.footer-hours-weekday p:first-of-type,
-.footer-hours-saturday p:first-of-type,
-.footer-hours-sunday p:first-of-type,
-.footer-contact-container {
-    text-indent: 25px;
-}
-
-.footer-hours-weekday p:nth-of-type(2),
-.footer-hours-saturday p:nth-of-type(2),
-.footer-hours-sunday p:nth-of-type(2) {
-    width: 150px;
-    text-align: left;
-}
-
-.footer-contact-container {
-    align-items: flex-end;
-    justify-content: space-between;
-}
-
-.footer-contacts {
-    flex-direction: column;
-}
-
-.footer {
-    width: 100%;
-    height: 100px;
-    background-color: #E4E4E4;
-    text-align: center;
-    margin: 20px 0 -50px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.footer img {
-    width: 30px;
-}
-
-.footer-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.footer-links a {
-    margin: 8px 10px;
-}
 
 .clearance-items-wrapper,
 .stock-items-wrapper {

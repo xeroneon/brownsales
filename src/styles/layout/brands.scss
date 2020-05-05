@@ -1,0 +1,42 @@
+.brands {
+    font-size: 10px;
+    position: relative;
+    width: 100vw;
+    padding-top: 7.25em;
+
+    &--title {
+        @include brownTitle(0);
+
+        &__box {
+            position: relative;
+            width: 100%;
+            text-align: center;   
+        }
+    }
+
+    &--wrapper {
+        background-color: #F8F2EB;
+        position: relative;
+        z-index: 5;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        max-width: 80%;
+        margin: auto;
+        margin-top: 6em;
+        padding-top: 6em;
+        padding-bottom: 6em;
+        padding: 8.75em 3em;
+        box-shadow: 0 2px 1.2em rgba(0,0,0, .16);
+    }
+
+    &--link {
+        padding: 1.75em 2.15em;
+    }
+
+    &--image {
+        max-height: 11.5em;
+        max-width: 64em;
+    }
+}

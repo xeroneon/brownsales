@@ -1,0 +1,16 @@
+@mixin brownTitle($top) {
+    position: absolute;
+    left: 50%;
+    z-index: 10;
+    top: $top;
+    transform: translateX(-50%);
+    font-weight: 400;
+
+    background-color: rgba($brown-primary, .85);
+    color: #fff;
+    width: 37vw;
+    min-width: 600px;
+    max-width: 820px;
+    font-size: 32px;
+    padding: 40px 75px;
+}

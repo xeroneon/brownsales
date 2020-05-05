@@ -11,7 +11,7 @@ const categories = [
     {name: 'Carpet'},
     {name: 'Tile'},
     {name: 'Granite & Quartz'},
-    {name: 'Lighting'},
+    {name: 'Lighting'}, 
     {name: 'Ceiling Fans'}
 ];
 

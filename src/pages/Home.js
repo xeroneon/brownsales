@@ -12,9 +12,7 @@ import { Link } from "react-router-dom";
 // ];
 
 const Home = () => (
-  <Link to="/stock">
-    <p>Come see what we carry</p>
-  </Link>
+
 );
 
 export default Home;

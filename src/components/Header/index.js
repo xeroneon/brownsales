@@ -25,6 +25,9 @@ const Header = (props) => {
         <Link to="/clearance">
           <h2>Up to 75% off all clearance items!</h2>
         </Link>
+        <Link to="/stock">
+          <p>Come see what we carry</p>
+        </Link>
       </div>
     </>
   );

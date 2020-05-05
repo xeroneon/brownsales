@@ -8,9 +8,9 @@ import './App.scss';
 import Header from './components/Header'
 import Nav from './components/Nav';
 import Footer from './components/Footer';
-
+import Brands from './components/Brands'
 // PAGES
-import Home from './pages/Home';
+// import Home from './pages/Home';
 import Items from './pages/Items';
 
 // API
@@ -25,12 +25,13 @@ function App() {
         <>
             <Header />
             <Nav />
-            <Route exact path='/'>
+            {/* <Route exact path='/'>
                 <Home />
-            </Route>
+            </Route> */}
             <Route path='/(clearance|stock)'>
                 <Items contentfulAPI={contentfulAPI} />
             </Route>
+            <Brands />
             <Footer />
         </>
     );
