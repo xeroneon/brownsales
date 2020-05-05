@@ -1,5 +1,4 @@
 import React from 'react';
-import Brands from './Brands';
 import Hours from './Hours';
 import Contact from './Contact';
 import facebook from '../../img/facebook.png'
@@ -9,7 +8,6 @@ const Footer = () => {
     return (
         <footer>
 
-            <Brands />
             <Hours />
             <Contact />
 
