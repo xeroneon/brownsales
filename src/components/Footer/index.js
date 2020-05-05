@@ -16,19 +16,7 @@ const Footer = () => {
         <p className="copyright">©2019 Brown Sales, Inc. All Rights Reserved.</p>
       </div>
 
-      {/* <div>
-                <p>&copy; 2019 Brown Sales, Inc.  All Rights Reserved</p>
-                <div className='footer-links'>
-                    <a
-                    href='https://www.facebook.com/pages/Brown-Sales/162169013801027'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    >
-                        <img src={facebook} alt='Facebook' />
-                    </a>
-                    <a href='/#' >Privacy Policy</a>
-                </div>
-            </div> */}
+      {/* FACEBOOK LINK: href='https://www.facebook.com/pages/Brown-Sales/162169013801027'*/}
     </footer>
   );
 };

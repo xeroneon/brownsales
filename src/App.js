@@ -13,13 +13,6 @@ import Brands from './components/Brands'
 // import Home from './pages/Home';
 import Items from './pages/Items';
 
-// API
-const contentful = require('contentful');
-const contentfulAPI = contentful.createClient({
-    space: process.env.REACT_APP_SPACE,
-    accessToken: process.env.REACT_APP_SECRET
-})
-
 function App() {
     return (
         <>
@@ -29,7 +22,7 @@ function App() {
                 <Home />
             </Route> */}
             <Route path='/(clearance|stock)'>
-                <Items contentfulAPI={contentfulAPI} />
+                <Items />
             </Route>
             <Brands />
             <Footer />
