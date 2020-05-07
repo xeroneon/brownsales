@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Form = () => {
     const [form, setForm] = useState({
@@ -8,6 +8,7 @@ const Form = () => {
         message: ''
     });
     const [confirm, setConfirm] = useState();
+    const [error, setError] = useState();
 
     const encode = (data) => {
         return Object.keys(data)
@@ -16,6 +17,7 @@ const Form = () => {
     }
 
     const handleSubmit = () => {
+        
 
         fetch("/", {
           method: "POST",
@@ -31,9 +33,26 @@ const Form = () => {
         setForm(prevForm => ({...prevForm, [name]: value}));
     }
 
+    const checkForm = () => {
+        if(!form.name.match(/([\u00c0-\u01ffA-Za-z']{1,30})\w+/g) ||
+        !form.email.match( /^[\w-.]+@([\w-]+.)+[\w-]{2,4}$/) ||
+        form.phone.length !== 10 ||
+        // original regex
+        // /(?:\d{1}\s)?(?(\d{3}))?-?\s?(\d{3})-?\s?(\d{4})/
+        // tried this regex as well and didn't work when non digits were introduced
+        // !form.phone.match(/^[+]?[(]?[2-9]{1}\d{2}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/im) ||
+        form.message.length < 5
+        ){
+            setConfirm(false);
+            return setError('Please make sure all the fields are filled out and valid!')
+        }
+
+        return setConfirm(true);
+    }
+
     return (
         <div>
-            {confirm &&
+            {!error && confirm &&
                 <div>
                     <p>Would you like to send your inquiry?</p>
                     
@@ -84,7 +103,11 @@ const Form = () => {
                 onChange={handleInput}
                 />
 
-                <button type='button' onClick={() => setConfirm(true)}>Send</button>
+                {error &&
+                    <span>{error}</span>
+                }
+
+                <button type='button' onClick={checkForm}>Send</button>
             </form>
         </div>
     )
