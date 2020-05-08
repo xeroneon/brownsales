@@ -9,6 +9,7 @@ import Header from './components/Header'
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Brands from './components/Brands'
+import Form from './components/Form';
 // PAGES
 // import Home from './pages/Home';
 import Items from './pages/Items';
@@ -18,9 +19,9 @@ function App() {
         <>
             <Header />
             <Nav />
-            {/* <Route exact path='/'>
-                <Home />
-            </Route> */}
+            <Route exact path='/'>
+                <Form />
+            </Route>
             <Route path='/(clearance|stock)'>
                 <Items />
             </Route>
