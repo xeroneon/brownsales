@@ -6,6 +6,7 @@
 @import './styles/layout/nav';
 @import './styles/layout/brands';
 @import './styles/layout/footer';
+@import './styles/layout/contact';
 
 button {
     border: none;
@@ -13,6 +14,10 @@ button {
 
 button:hover {
     cursor: pointer;
+}
+
+body {
+    background: url(./img/fabric_bg.png);
 }
 
 .clearance-categories,

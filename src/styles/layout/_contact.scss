@@ -1,0 +1,56 @@
+.toggle {
+    position: fixed;
+    bottom: 2rem; right: 2rem;
+    z-index: 15;
+    transform: translateY(0);
+    background-color: #F8F2EB;
+    font-size: 10px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    padding: 1.4em 3.75em;
+    border-radius: 2.25em;
+    box-shadow: 0 .5em 1.3em rgba(0,0,0,.22);
+    cursor: pointer;
+    overflow: hidden;
+    transition: .2s all ease-in-out;
+
+    &--icon {
+        font-size: 2.75em;
+        position: relative;
+        transform: translateX(0);
+        transition: transform .13s ease-out;
+    }
+
+    &--text {
+        font-size: 2.25em;
+        padding-right: .75em;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 0rem;
+        width: 100%;
+        background-color: $brown-primary;
+        clip-path: circle(100% at 50% 100%);
+        transition: all .4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    &:hover {
+        color: #fff;
+        transform: translateY(3px);
+        box-shadow: 0 .25em .9em rgba(0,0,0,.31);
+        &::before {
+            height: 100%;
+            clip-path: circle(100% at 50% 100%);
+            z-index: -1;
+        }
+
+        .toggle--icon {
+            transform: translateX(6px);
+        }
+    }
+}

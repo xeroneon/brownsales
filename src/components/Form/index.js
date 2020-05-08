@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
+import styled from "styled-components";
 
-const Form = () => {
+const StyledForm = styled.div`
+    opacity: ${props => props.formOpen ? 1 : 0}
+`;
+
+const Form = (props) => {
     const [form, setForm] = useState({
         name: '',
         email: '',
@@ -51,7 +56,7 @@ const Form = () => {
     }
 
     return (
-        <div>
+        <StyledForm formOpen={props.formOpen}>
             {!error && confirm &&
                 <div>
                     <p>Would you like to send your inquiry?</p>
@@ -109,7 +114,7 @@ const Form = () => {
 
                 <button type='button' onClick={checkForm}>Send</button>
             </form>
-        </div>
+        </StyledForm>
     )
 }
 
