@@ -27,7 +27,7 @@ const Header = (props) => {
         </Link>
         <Link to="/stock">
           <p>Come see what we carry</p>
-        </Link>
+        </Link> 
       </div>
     </>
   );

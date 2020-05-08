@@ -18,6 +18,15 @@
         transform: translateX(10%);
     }
 
+    @media screen and (max-width: 1150px) {
+        &--info {
+            width: calc(100% - 8em);
+            flex-direction: column;
+            align-items: center;
+            transform: translateX(0%);
+        }
+    }
+
     &--legal {
         position: absolute;
         width: 50vw;
@@ -33,6 +42,10 @@
             color: #fff;
             line-height: 2.2;
         }
+
+        @media screen and (max-width: 1400px) {
+            font-size: 1.5em;
+        }
     }
 }
 
@@ -41,49 +54,22 @@
     width: 45%;
     display: flex;
     flex-direction: column;
+    @include contactAndHours;
 
-    &--title {
-        font-size: 3.1em;
-        margin-bottom: .3em;
-    }
     &__wrapper {
         padding: 0 2em;
-    }
-
-    &--day {
-        display: flex;
-        width: 70%;
-        justify-content: space-between;
-        font-size: 1.9em;
-        margin: .2em 0 ;
-
-        p:last-child {
-            display: inline-block;
-            width: 50%;
-        }
     }
 }
 
 .contact {
     width: 52.5%;
+    @include contactAndHours;
 
-    &--title {
-        font-size: 3.1em;
-        margin-bottom: .3em;
-    }
     &__wrapper {
         padding: 0 0 0 2em;
         display: flex;
         flex-direction: column;
         max-width: 90%;
-    }
-
-    &--item {
-        display: flex;
-        width: 70%;
-        justify-content: space-between;
-        font-size: 1.9em;
-        margin: .2em 0;
     }
 
     .contact--link {
