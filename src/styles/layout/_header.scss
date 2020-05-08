@@ -2,9 +2,7 @@
     font-size: 10px;
     position: relative;
     width: 100vw;
-    min-height: 500px;
-    max-height: 700px;
-    height: 60vh;
+    transition: .36s all;
 
     &--logo {
         width: 70%;

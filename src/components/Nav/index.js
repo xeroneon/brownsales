@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import ItemCard from "../ItemCards";
@@ -35,13 +35,18 @@ const categories = [
 const StyledNavItem = styled.div`
   background: url(${(props) => props.img}) center center no-repeat;
   background-size: cover;
+  width: calc(33.33% - 34px);
+  height: ${props => props.stockShown ? "100px" : "200px"};
+
+
 `;
 
-const Nav = () => {
+const Nav = (props) => {
+
   return (
     <nav className="nav">
       {categories.map((cat, index) => (
-        <NavItem category={cat} index={index} />
+        <NavItem category={cat} index={index} stockShown={props.stockShown} updateStockShown={props.updateStockShown}/>
       ))}
     </nav>
   );
@@ -49,7 +54,7 @@ const Nav = () => {
 
 const NavItem = (props) => {
   return (
-    <StyledNavItem img={props.category.img} className="nav--item">
+    <StyledNavItem img={props.category.img} className="nav--item" onClick={props.updateStockShown} stockShown={props.stockShown}>
       <p className="nav--item__name">{props.category.name}</p>
     </StyledNavItem>
   );

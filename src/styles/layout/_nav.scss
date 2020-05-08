@@ -6,13 +6,12 @@
     flex-wrap: wrap;
 
     &--item {
-        width: calc(33.33% - 34px);
         text-align: center;
-        height: 200px;
         margin: 17px;
         position: relative;
         color: #fff;
         cursor: pointer;
+        transition: .3s all ease;
 
         &::after {
             content: '';

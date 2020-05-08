@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from "styled-components";
 
 const StyledForm = styled.div`
-    opacity: ${props => props.formOpen ? 1 : 0}
+    visibility: ${props => props.formOpen ? "visible" : "hidden" }
 `;
 
 const Form = (props) => {

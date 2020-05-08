@@ -60,17 +60,17 @@ const Items = () => {
         });
     }, [skipItems, location.pathname]);
 
-    useEffect(() => {
-        window.scrollTo(0, headerRef.current.offsetTop - 200)
-    }, [])
+    // useEffect(() => {
+    //     window.scrollTo(0, headerRef.current.offsetTop - 200)
+    // }, [])
     
-    useEffect(() => {
-        const timedScroll = setTimeout(() => 
-            window.scrollTo({top: itemRef.current.offsetTop + showImg * 200 - 1200, behavior: 'smooth'})
-        , 500);
+    // useEffect(() => {
+    //     const timedScroll = setTimeout(() => 
+    //         window.scrollTo({top: itemRef.current.offsetTop + showImg * 200 - 1200, behavior: 'smooth'})
+    //     , 500);
 
-        return () => clearTimeout(timedScroll);
-    }, [showImg, location.pathname])
+    //     return () => clearTimeout(timedScroll);
+    // }, [showImg, location.pathname])
 
     return (
         <>
@@ -79,15 +79,14 @@ const Items = () => {
                 className='home-clearance-header'
                 ref={headerRef}
                 >
-                    <h2>Clearance Items In Our Phoenix Warehouse</h2>
-                    <p>Up to 75% off all clearance items</p>
+                    <h2>Limited Special Items! (order now!)</h2>
                 </div>
             :
                 <div
                 className='home-stock-header'
                 ref={headerRef}
                 >
-                    <h2>Items available in house or to order</h2>
+                    <h2>All Our Items</h2>
                 </div>
             }
 

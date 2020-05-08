@@ -8,12 +8,15 @@ import logo from "../../img/brown-sales-logo.png";
 const StyledHeader = styled.div`
   background: url(${bgImage}) center center no-repeat;
   background-size: cover;
+  min-height: ${props => props.stockShown ? "250px" : "500px"};
+  max-height: 700px;
+  height: ${props => props.stockShown ? "30vh" : "60vh"};
 `;
 
 const Header = (props) => {
   return (
     <>
-      <StyledHeader className="header" id="Header">
+      <StyledHeader className="header" id="Header" stockShown={props.stockShown}>
         <div className="header--logo__container">
           <Link to="/">
             <img src={logo} alt="Brown Sales, INC" className="header--logo" />
@@ -22,10 +25,10 @@ const Header = (props) => {
       </StyledHeader>
       <div className="header--message">
         <h1>Clearance Items In Our Phoenix Warehouse</h1>{" "}
-        <Link to="/clearance">
+        <Link to="/clearance" onClick={props.updateStockShown}>
           <h2>Up to 75% off all clearance items!</h2>
         </Link>
-        <Link to="/stock">
+        <Link to="/stock" onClick={props.updateStockShown}>
           <p>Come see what we carry</p>
         </Link> 
       </div>
