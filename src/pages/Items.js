@@ -35,7 +35,7 @@ const Items = () => {
     contentfulAPI
       .getEntries({
         content_type:
-          pathname[1] === "clearance" ? "clearanceItems" : "stockItems",
+        'specialBuy',
         "fields.category": pathname[2] ? pathname[2].split("-").join(" ") : "",
         skip: skipItems,
       })
@@ -70,7 +70,7 @@ const Items = () => {
       </div>
 
       <div
-        className={`${pathname[1]}-items-wrapper ${items ? "" : "loading"}`}
+        className={`special-buy-items-wrapper ${items ? "" : "loading"}`}
         style={{ height: `${showImg * 200}px` }}
         ref={itemRef}
       >
@@ -92,8 +92,8 @@ const Items = () => {
               })
           : totalItems === 0 && <Loading loading={true} size={80} />}
 
-        {totalItems === -1 && pathname[1] === "clearance" && (
-          <p className={`${pathname[1]}-out`}>
+        {totalItems === -1 && (
+          <p className={`special-buy-out`}>
             All {category !== "all" ? category : ""} clearance items currently
             sold out!
           </p>
@@ -101,7 +101,7 @@ const Items = () => {
 
         {items && items.length - showImg > 0 && (
           <span
-            className={`${pathname[1]}-load`}
+            className={`special-buy-load`}
             onClick={() => {
               setSkipItems((prevSkip) =>
                 prevSkip < totalItems &&
