@@ -17,7 +17,7 @@ const Header = (props) => {
   return (
     <>
       <StyledHeader className="header" id="Header" stockShown={props.stockShown}>
-        <div className="header--logo__container">
+        <div className="header--logo__container" onClick={e => props.updateStockShown(e, false)}>
           <Link to="/">
             <img src={logo} alt="Brown Sales, INC" className="header--logo" />
           </Link>
@@ -25,12 +25,9 @@ const Header = (props) => {
       </StyledHeader>
       <div className="header--message">
         <h1>Clearance Items In Our Phoenix Warehouse</h1>{" "}
-        <Link to="/clearance" onClick={props.updateStockShown}>
+        <Link to="/special-buy" onClick={e => props.updateStockShown(e, true)}>
           <h2>Up to 75% off all clearance items!</h2>
         </Link>
-        <Link to="/stock" onClick={props.updateStockShown}>
-          <p>Come see what we carry</p>
-        </Link> 
       </div>
     </>
   );

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import styled from "styled-components";
 import ItemCard from "../ItemCards";
 
@@ -15,7 +15,7 @@ const categories = [
     img: bgTile,
   },
   {
-    name: "granite & quartz",
+    name: "granite-&-quartz",
     img: bgGranite,
   },
   {
@@ -35,18 +35,17 @@ const categories = [
 const StyledNavItem = styled.div`
   background: url(${(props) => props.img}) center center no-repeat;
   background-size: cover;
-  width: calc(33.33% - 34px);
-  height: ${props => props.stockShown ? "100px" : "200px"};
-
-
+  width: 100%;
+  height: ${(props) => (props.stockShown ? "100px" : "200px")};
 `;
 
 const Nav = (props) => {
-
+  const location = useLocation();
+  console.log(location);
   return (
     <nav className="nav">
       {categories.map((cat, index) => (
-        <NavItem category={cat} index={index} stockShown={props.stockShown} updateStockShown={props.updateStockShown}/>
+        <NavItem category={cat} index={index} stockShown={props.stockShown} />
       ))}
     </nav>
   );
@@ -54,9 +53,21 @@ const Nav = (props) => {
 
 const NavItem = (props) => {
   return (
-    <StyledNavItem img={props.category.img} className="nav--item" onClick={props.updateStockShown} stockShown={props.stockShown}>
-      <p className="nav--item__name">{props.category.name}</p>
-    </StyledNavItem>
+    <Link 
+      to={`/special-buy/${props.category.name}`}
+      style={{
+        display: "inline-block",
+        width: "calc(33.33% - 34px)",
+        margin: "17px"
+      }}>
+      <StyledNavItem
+        img={props.category.img}
+        className="nav--item"
+        stockShown={props.stockShown}
+      >
+        <p className="nav--item__name">{props.category.name}</p>
+      </StyledNavItem>
+    </Link>
   );
 };
 

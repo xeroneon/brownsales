@@ -34,20 +34,6 @@ body {
     flex-wrap: nowrap;
 }
 
-.clearance .category-card {
-    max-width: 15%;
-}
-
-.category-card {
-    margin: 10px;
-    max-width: 600px;
-}
-
-.category-card img {
-    width: 100%;
-}
-
-
 .clearance-items-wrapper,
 .stock-items-wrapper {
     margin: 25px auto;
@@ -57,21 +43,6 @@ body {
     transition: height .5s;
     position: relative;
     padding-bottom: 50px;
-}
-
-.clearance-item img,
-.stock-item img {
-    width: 250px;
-    margin: auto;
-}
-
-.clearance-item,
-.stock-item {
-    margin: 50px;
-    height: 350px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
 }
 
 .clearance-item {
