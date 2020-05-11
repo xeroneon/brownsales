@@ -17,7 +17,7 @@ button:hover {
 }
 
 body {
-    background: url(./img/fabric_bg.png);
+    background-color: rgb(235, 232, 232);
 }
 
 .clearance-categories,
@@ -34,8 +34,7 @@ body {
     flex-wrap: nowrap;
 }
 
-.special-buy-items-wrapper,
-.stock-items-wrapper {
+.special-buy-items-wrapper  {
     margin: 25px auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
