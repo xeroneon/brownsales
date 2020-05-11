@@ -25,7 +25,7 @@ function App() {
         <>
             <Header stockShown={stockShown} updateStockShown={(e,val) => updateStockShown(val)}/>
             <Nav stockShown={stockShown} updateStockShown={(e,val) => updateStockShown(val)}/>
-            <Route exact path='/'>
+            <Route path='/'>
                 <Form formOpen={formOpen}/>
             </Route>
             <Route path='/special-buy'>
@@ -41,9 +41,9 @@ function App() {
     );
 }
 
-function FormToggle(props) {
+function FormToggle({toggleForm}) {
     return (
-        <div className="toggle" onClick={e => props.toggleForm(e)}>
+        <div className="toggle" onClick={toggleForm}>
             <p className="toggle--text">contact us</p>
             <FAIcon icon={faPaperPlane} className="toggle--icon"/>
         </div>
