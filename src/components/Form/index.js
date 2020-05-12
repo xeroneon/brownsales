@@ -83,9 +83,6 @@ const Form = (props) => {
       </div>
       <form className="inquiry--form">
         <div className="inquiry--input__container">
-          <label className="inquiry--input__label" htmlFor="name">
-            Name:
-          </label>
           <input
             className="inquiry--input"
             disabled={confirm}
@@ -93,11 +90,15 @@ const Form = (props) => {
             value={form.name}
             onChange={handleInput}
           />
+          <label 
+            className="inquiry--input__label" 
+            htmlFor="name"
+            name="name"
+          >
+            Name:
+          </label>
         </div>
         <div className="inquiry--input__container">
-          <label className="inquiry--input__label" htmlFor="email">
-            Email:
-          </label>
           <input
             className="inquiry--input"
             disabled={confirm}
@@ -105,11 +106,15 @@ const Form = (props) => {
             value={form.email}
             onChange={handleInput}
           />
+          <label 
+            className="inquiry--input__label" 
+            htmlFor="email"
+            name="email"
+          >
+            Email:
+          </label>
         </div>
         <div className="inquiry--input__container">
-          <label className="inquiry--input__label" htmlFor="phone">
-            Phone Number:
-          </label>
           <input
             className="inquiry--input"
             disabled={confirm}
@@ -118,11 +123,15 @@ const Form = (props) => {
             value={form.phone}
             onChange={handleInput}
           />
+          <label 
+            className="inquiry--input__label" 
+            htmlFor="phone"
+            name="phone"
+          >
+            Phone Number:
+          </label>
         </div>
         <div className="inquiry--input__container">
-          <label className="inquiry--input__label" htmlFor="message">
-            Message to Brown Sales:
-          </label>
           <textarea
             className="inquiry--input"
             disabled={confirm}
@@ -130,10 +139,17 @@ const Form = (props) => {
             value={form.message}
             onChange={handleInput}
           />
+          <label 
+            className="inquiry--input__label" 
+            htmlFor="message"
+            name="message"
+          >
+            Message to Brown Sales:
+          </label>
         </div>
         {error && <span>{error}</span>}
 
-        <button type="button" onClick={checkForm}>
+        <button type="button" onClick={checkForm} className="inquiry--submit">
           Send
         </button>
       </form>
