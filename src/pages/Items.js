@@ -39,7 +39,7 @@ const Items = () => {
         "fields.category": pathname[2] ? pathname[2].split("-").join(" ") : "",
         skip: skipItems,
       })
-      .then((entries) => {
+      .then(entries => {
         setTotalItems(entries.total !== 0 ? entries.total : -1);
         setShowImg(entries.total > 0 && entries.total > 3 ? 6 : 3);
         setItems((prevItems) => {
@@ -77,7 +77,7 @@ const Items = () => {
         {items
           ? items
               // .filter(item => item.fields.quantity > 0)
-              .map((item, ind, arr) => {
+              .map((item, ind) => {
                 if (ind >= showImg) return null;
 
                 return (
