@@ -1,0 +1,43 @@
+.showcase {
+    position: relative;
+    &--title {
+        text-align: center;
+        @include brownTitle(-80px);
+    }
+
+
+    &--grid {
+        display: grid;
+        width: 80%;
+        margin: 125px auto 0;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: auto;
+        gap: 15px;
+    }
+}
+
+.product {
+    max-width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    &--image {
+        max-width: 100%;
+        max-height: 100%;
+        &__container {
+            width: 90%;
+            flex-grow: 3;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+    }
+
+    &--info {
+        flex-grow: 4;
+    }
+}
