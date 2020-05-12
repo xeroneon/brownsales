@@ -42,7 +42,7 @@
     &--input {
         position: relative;
         z-index: 75;
-        min-width: 99.9%;
+        max-width: 100%;
         border: none;
         text-align: center;
         line-height: 44px;
@@ -72,8 +72,9 @@
             margin-bottom: 20px;
             textarea {
                 min-height: 110px;
-                max-height: 255px;
-                max-width: 90%;
+                max-height: 220px;
+                max-width: 100%;
+                min-width: 100%;
             }
 
             label[name="name"] {
