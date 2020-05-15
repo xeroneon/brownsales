@@ -3,17 +3,18 @@
     min-height: 100%;
     &--title {
         text-align: center;
-        @include brownTitle(-80px);
+        @include brownTitle(-90px);
     }
 
 
     &--grid {
         display: grid;
         width: 75%;
-        margin: 125px auto 0;
+        margin: 150px auto 0;
         grid-template-columns: repeat(3, 1fr);
         grid-auto-rows: minmax(auto, 470px);
-        gap: 15px;
+        row-gap: 85px;
+        column-gap: 45px;
         position: relative;
 
         &__load {
