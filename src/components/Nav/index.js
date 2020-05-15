@@ -28,7 +28,7 @@ const categories = [
     img: bgLighting,
   },
   {
-    name: "celiing-fans",
+    name: "ceiling-fans",
     img: bgFans,
   },
 ];
