@@ -50,6 +50,7 @@ const Nav = (props) => {
         key={index}
         category={cat}
         stockShown={props.stockShown}
+        updateStockShown={e => props.updateStockShown(e,true)}
         />
       ))}
     </nav>
@@ -58,8 +59,9 @@ const Nav = (props) => {
 
 const NavItem = (props) => {
   return (
-    <Link 
+    <Link s
       to={`/special-buy/${props.category.name}`}
+      onClick={props.updateStockShown}
       style={{
         display: "inline-block",
         width: "calc(33.33% - 34px)",

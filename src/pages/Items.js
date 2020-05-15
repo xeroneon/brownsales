@@ -64,13 +64,11 @@ const Items = () => {
   // }, [showImg, location.pathname])
 
   return (
-    <>
-      <div className="home-stock-header" ref={headerRef}>
-        <h2>All Our Items</h2>
-      </div>
+    <div className="showcase">
+      <h2 className="showcase--title" ref={headerRef} >All Of Our Items</h2>
 
       <div
-        className={`special-buy-items-wrapper ${items ? "" : "loading"}`}
+        className={`showcase--grid ${items ? "" : "loading"}`}
         style={{ height: `${showImg * 200}px` }}
         ref={itemRef}
       >
@@ -120,7 +118,7 @@ const Items = () => {
           </span>
         )}
       </div>
-    </>
+    </div>
   );
 };
 
