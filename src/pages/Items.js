@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
-import { faAngleDoubleDown } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon as FAIcon } from "@fortawesome/react-fontawesome";
 import { ClipLoader as Loading } from "react-spinners";
 import ItemCard from "../components/ItemCards";
@@ -69,7 +69,7 @@ const Items = () => {
 
       <div
         className={`showcase--grid ${items ? "" : "loading"}`}
-        style={{ height: `${showImg * 200}px` }}
+        // style={{ height: `${showImg * 200}px` }}
         ref={itemRef}
       >
         {items
@@ -97,9 +97,10 @@ const Items = () => {
           </p>
         )}
 
+      </div>
         {items && items.length - showImg > 0 && (
           <span
-            className={`special-buy-load`}
+            className={`special-buy-load showcase--grid__load`}
             onClick={() => {
               setSkipItems((prevSkip) =>
                 prevSkip < totalItems &&
@@ -114,10 +115,9 @@ const Items = () => {
             }}
           >
             <span>Load More</span>
-            <FAIcon icon={faAngleDoubleDown} />
+            <FAIcon icon={faAngleDown} />
           </span>
         )}
-      </div>
     </div>
   );
 };

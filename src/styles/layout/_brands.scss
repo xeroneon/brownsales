@@ -5,7 +5,7 @@
     padding-top: 7.25em;
 
     &--title {
-        @include brownTitle(0);
+        @include brownTitle(80px);
 
         &__box {
             position: relative;
@@ -17,6 +17,7 @@
     &--wrapper {
         background-color: #F8F2EB;
         position: relative;
+        transform: scale(.775) translateY(25px);
         z-index: 5;
         display: flex;
         flex-wrap: wrap;
