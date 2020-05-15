@@ -12,23 +12,23 @@ import bgFans from "../../img/updatedphotos/mattresses.jpg";
 
 const categories = [
   {
-    name: "tile",
+    name: "Tile",
     img: bgTile,
   },
   {
-    name: "granite-&-quartz",
+    name: "Granite & Quartz",
     img: bgGranite,
   },
   {
-    name: "carpet",
+    name: "Carpet",
     img: bgCarpet,
   },
   {
-    name: "lighting",
+    name: "Lighting",
     img: bgLighting,
   },
   {
-    name: "ceiling-fans",
+    name: "Ceiling fans",
     img: bgFans,
   },
 ];
@@ -59,7 +59,7 @@ const Nav = (props) => {
 const NavItem = (props) => {
   return (
     <Link 
-      to={`/special-buy/${props.category.name}`}
+      to={`/special-buy/${props.category.name.toLowerCase().split(' ').join('-')}`}
       style={{
         display: "inline-block",
         width: "calc(33.33% - 34px)",
