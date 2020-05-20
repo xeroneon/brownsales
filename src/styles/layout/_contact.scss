@@ -24,7 +24,7 @@
             bottom: 0;
             left: 10%;
             width: 80%;
-            height: 3px;
+            height: 1px;
             background-color: #4B3113;
         }
 
@@ -42,15 +42,17 @@
     &--input {
         position: relative;
         z-index: 75;
-        max-width: 100%;
+        width: 100%;
+        height: 59px;
         border: none;
         text-align: center;
-        line-height: 44px;
         font-size: 22px;
         background-color: transparent;
         color: #fff;
         &:active,
         &:focus {
+            outline: none;
+
             + label {
 
                 &::before {
@@ -59,7 +61,7 @@
 
                 &::after {
                     opacity: 1;
-                    transform: rotate(-90deg) translate(50%, -110%);
+                    transform: rotate(-90deg) translate(85%, -45%);
                 }
             }
         }
@@ -75,6 +77,15 @@
                 max-height: 220px;
                 max-width: 100%;
                 min-width: 100%;
+
+                &:active,&:focus {
+
+                    + label {
+                        &::after {
+                            transform: rotate(-90deg) translate(80%, -57%) !important;
+                        }
+                    }
+                }
             }
 
             label[name="name"] {
@@ -115,7 +126,7 @@
             text-align: center;
             pointer-events: none;
             font-weight: 700;
-            line-height: 44px;
+            line-height: 94px;
             font-size: 22px;
             opacity: 1;
             transition: .075s all ease;
@@ -156,6 +167,41 @@
         color: #fff;
         background-color: rgb(75, 49, 19);
         margin: 0 25px 10px;
+    }
+
+    &--confirm {
+        position: absolute;
+        bottom: 0%;
+        left: 50%;
+        z-index: 500;
+        transform: translate(-50%,-10%);
+        background-color: #4B3113;
+        width: 85%;
+        height: 150px;
+        color: #fff;
+        display: flex; flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+
+        p {
+            width: 100%;
+            text-align: center;
+        }
+
+        &__cancel {
+            background-color: transparent;
+            color: #fff;
+        }
+
+        &__submit {
+            background-color: #fff;
+            color: #4B3113;
+        }
+
+        &__submit,
+        &__cancel {
+            padding: 15px 25px;
+        }
     }
 }
 

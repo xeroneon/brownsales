@@ -62,18 +62,18 @@ const Form = (props) => {
     <StyledForm formOpen={props.formOpen} className="inquiry">
       {!error && confirm && (
         <div className="inquiry--confirm">
-          <p>Would you like to send your inquiry?</p>
-
-          <button onClick={handleSubmit} className="inquiry--confirm__submit">
-            Send!
-          </button>
+          <p>Are you sure you want to send an inquiry?</p>
 
           <button
             onClick={() => setConfirm(false)}
             className="inquiry--confirm__cancel"
           >
-            Cancel
+            Let me think about it more
           </button>
+          <button onClick={handleSubmit} className="inquiry--confirm__submit">
+            yes I'm sure!
+          </button>
+
         </div>
       )}
       <div className="inquiry--title">
@@ -125,8 +125,7 @@ const Form = (props) => {
             className="inquiry--input__label" 
             htmlFor="phone"
             name="phone"
-          >
-            Phone Number:
+          >Phone Number:
           </label>
         </div>
         <div className="inquiry--input__container">

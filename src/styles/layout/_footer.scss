@@ -1,81 +1,154 @@
 .footer {
-    position: relative;
-    margin-top: -110px;
-    font-size: 10px;
-    background-color: #4B3113;
-    color: #fff;
-    width: 100vw;
-    min-height: 35rem;
-    padding: 18em 0em 8rem;
-    overflow-x: hidden;
+  position: relative;
+  margin-top: -110px;
+  font-size: 10px;
+  background-color: #4b3113;
+  color: #fff;
+  width: 100vw;
+  min-height: 35rem;
+  padding: 18em 0em 8rem;
+  overflow-x: hidden;
+
+  &--info {
+    margin: 0 auto;
+    width: calc(100% - 16em);
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    transform: translate(10%, 0%);
+  }
+
+  @media screen and (max-width: 1150px) {
+    padding: 12em 0em 8rem;
 
     &--info {
-        margin: 0 auto;
-        width: calc(100% - 16em);
-        height: 100%;
-        display: flex;
-        align-items: flex-start;
-        transform: translateX(10%);
+      width: calc(80% - 8em);
+      flex-direction: column;
+      align-items: center;
+      transform: translateX(0%);
     }
 
-    @media screen and (max-width: 1150px) {
-        &--info {
-            width: calc(100% - 8em);
-            flex-direction: column;
-            align-items: center;
-            transform: translateX(0%);
-        }
-    }
-
-    &--legal {
-        position: absolute;
-        width: 50vw;
-        bottom: 0;
-        left: 50%;
-        transform: translate(-50%,0);
+    .hours,
+    .contact {
+      p,
+      a {
         text-align: center;
-        padding-bottom: 1.5em;
-        font-size: 1.6em;
-        text-transform: capitalize;
-        
-        .privacy-policy {
-            color: #fff;
-            line-height: 2.2;
-        }
+        width: 100%;
+      }
 
-        @media screen and (max-width: 1400px) {
-            font-size: 1.5em;
-        }
+      &--title {
+        text-align: center;
+      }
     }
+  }
+
+  @media screen and (max-width: 850px) {
+    &--info {
+      width: calc(100% - 8em);
+      flex-direction: column;
+      align-items: left;
+      transform: translateX(0%);
+    }
+
+    .hours,
+    .contact {
+      p,
+      a {
+        text-align: left;
+        width: 100%;
+      }
+
+      &--title {
+        text-align: left;
+      }
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    &--info {
+      width: 100%;
+    }
+    .hours,
+    .contact {
+      p,
+      a {
+        text-align: left;
+        width: 100%;
+        font-size: 13px;
+      }
+
+      &--title {
+        text-align: left;
+      }
+    }
+
+    &--facebook {
+      font-size: 24px !important;
+    }
+  }
+
+  &--legal {
+    position: absolute;
+    width: 50vw;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+    padding-bottom: 1.5em;
+    font-size: 1.6em;
+    text-transform: capitalize;
+
+    .privacy-policy {
+      color: #fff;
+      line-height: 2.2;
+    }
+
+    @media screen and (max-width: 1400px) {
+      font-size: 1.5em;
+    }
+
+    @media screen and (max-width: 1400px) {
+      text-align: left;
+      width: calc(100% - 8em);
+    }
+
+    @media screen and (max-width: 700px) {
+      font-size: 1em;
+      padding-bottom: 10em;
+    }
+  }
+
+  &--facebook {
+    font-size: 48px;
+  }
 }
 
-
 .hours {
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    @include contactAndHours;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  @include contactAndHours;
 
-    &__wrapper {
-        padding: 0 2em;
-    }
+  &__wrapper {
+    padding: 0 2em;
+  }
 }
 
 .contact {
-    width: 52.5%;
-    @include contactAndHours;
+  width: 52.5%;
+  @include contactAndHours;
 
-    &__wrapper {
-        padding: 0 0 0 2em;
-        display: flex;
-        flex-direction: column;
-        max-width: 90%;
-    }
+  &__wrapper {
+    padding: 0 0 0 2em;
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+  }
 
-    .contact--link {
-        display: inline-block;
-        width: 60%;
-        text-decoration: none;
-        color: #fff;
-    }
+  .contact--link {
+    display: inline-block;
+    width: 60%;
+    text-decoration: none;
+    color: #fff;
+  }
 }
