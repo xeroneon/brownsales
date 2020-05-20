@@ -73,6 +73,23 @@
             row-gap: 45px;
             column-gap: 60px;
             grid-template-columns: repeat(2, 1fr);
+
+            .product {
+
+                &--name {
+                    font-size: 14px;
+
+                    &::before {
+                        bottom: 32.5%;
+                    }
+                }
+
+                &--price {
+                    font-size: 18px;
+                    padding-bottom: 0px; padding-top: 20px;
+
+                }
+            }
         }
 
         @media screen and (max-width: 950px) {
@@ -88,14 +105,6 @@
             grid-template-columns: repeat(1, 1fr);
 
             .product {
-                // padding: 0 10px 20px;
-
-                &--image {
-                    
-                    &__container {
-                        // max-height: 55%;
-                    }
-                }
 
                 &--info {
                     max-height: 35%;
@@ -103,19 +112,6 @@
                     padding-top: 10px;
                 }
 
-                &--name {
-                    font-size: 14px;
-
-                    &::before {
-                        bottom: 32.5%;
-                    }
-                }
-
-                &--price {
-                    font-size: 18px;
-                    padding-bottom: 0px; padding-top: 20px;
-
-                }
             }
         }
     }
