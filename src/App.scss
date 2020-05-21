@@ -7,6 +7,7 @@
 @import './styles/layout/brands';
 @import './styles/layout/footer';
 @import './styles/layout/contact';
+@import './styles/layout/product-showcase';
 
 button {
     border: none;
@@ -18,20 +19,6 @@ button:hover {
 
 body {
     background-color: rgb(235, 232, 232);
-}
-
-.clearance-categories,
-.stock-categories,
-.-categories {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 40px 0;
-}
-
-.clearance-categories.clearance {
-    flex-wrap: nowrap;
 }
 
 .special-buy-items-wrapper  {

@@ -5,7 +5,7 @@
     padding-top: 7.25em;
 
     &--title {
-        @include brownTitle(0);
+        @include brownTitle(40px);
 
         &__box {
             position: relative;
@@ -17,6 +17,7 @@
     &--wrapper {
         background-color: #F8F2EB;
         position: relative;
+        transform: scale(.775) translateY(-25px);
         z-index: 5;
         display: flex;
         flex-wrap: wrap;
@@ -24,9 +25,7 @@
         align-items: center;
         max-width: 80%;
         margin: auto;
-        margin-top: 6em;
-        padding-top: 6em;
-        padding-bottom: 6em;
+        margin-top: 3em;
         padding: 8.75em 3em;
         box-shadow: 0 2px 1.2em rgba(0,0,0, .16);
     }
@@ -38,5 +37,25 @@
     &--image {
         max-height: 11.5em;
         max-width: 64em;
+    }
+
+    @media screen and (max-width: 1300px) {
+
+        &--image {
+            max-height: 9.5em;
+            max-width: 48em;
+        }
+    }
+
+    @media screen and (max-width: 800px) {
+
+        &--wrapper {
+            max-width: 90%;
+        }
+
+        &--image {
+            max-height: 9em;
+            max-width: 36em;
+        }
     }
 }

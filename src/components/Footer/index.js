@@ -60,18 +60,13 @@ const Contact = () => {
           href="https://www.facebook.com/pages/Brown-Sales/162169013801027"
           target="_blank"
           rel="noopener noreferrer"
-          className="footer-facebook"
+          className="footer--facebook"
         >
-          <FAIcon
-            icon={faCircle}
-            color="#ffffff"
-            className="footer-facebook-circle"
-          />
-
+          {/* facebook blue: #3a559f */}
           <FAIcon
             icon={faFacebookSquare}
-            color="#3a559f"
-            className="footer-facebook-icon"
+            color="#fff"
+            className="footer--facebook__icon"
           />
         </a>
       </div>

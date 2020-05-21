@@ -37,7 +37,15 @@ const StyledNavItem = styled.div`
   background: url(${(props) => props.img}) center center no-repeat;
   background-size: cover;
   width: 100%;
-  height: ${(props) => (props.stockShown ? "100px" : "200px")};
+  height: ${(props) => (props.stockShown ? "5vw" : "10vw")};
+
+  @media screen and (max-width: 1400px) {  
+    height: ${(props) => (props.stockShown ? "7vw" : "12vw")};
+  }
+
+  @media screen and (max-width: 1000px) {  
+    height: 75px;
+  }
 `;
 
 const Nav = (props) => {
@@ -50,6 +58,7 @@ const Nav = (props) => {
         key={index}
         category={cat}
         stockShown={props.stockShown}
+        updateStockShown={e => props.updateStockShown(e,true)}
         />
       ))}
     </nav>
@@ -58,12 +67,12 @@ const Nav = (props) => {
 
 const NavItem = (props) => {
   return (
-    <Link 
-      to={`/special-buy/${props.category.name.toLowerCase().split(' ').join('-')}`}
+    <Link
+      to={`/special-buy/${props.category.name}`}
+      onClick={props.updateStockShown}
+      className="nav--item__link"
       style={{
-        display: "inline-block",
-        width: "calc(33.33% - 34px)",
-        margin: "17px"
+
       }}>
       <StyledNavItem
         img={props.category.img}

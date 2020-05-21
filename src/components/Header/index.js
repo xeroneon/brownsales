@@ -8,7 +8,7 @@ import logo from "../../img/brown-sales-logo.png";
 const StyledHeader = styled.div`
   background: url(${bgImage}) center center no-repeat;
   background-size: cover;
-  min-height: ${props => props.stockShown ? "250px" : "500px"};
+  min-height: ${props => props.stockShown ? "300px" : "500px"};
   max-height: 700px;
   height: ${props => props.stockShown ? "30vh" : "60vh"};
 `;
