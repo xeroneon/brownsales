@@ -25,7 +25,10 @@ function App() {
             <Header />
             <Nav />
             <Route path='/'>
-                <Form formOpen={formOpen}/>
+                <Form
+                formOpen={formOpen}
+                toggleForm={toggleForm}
+                />
             </Route>
             <Route path='/special-buy'>
                 <Items />
