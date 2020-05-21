@@ -50,15 +50,15 @@ const StyledNavItem = styled.div`
 
 const Nav = (props) => {
   const location = useLocation();
-  console.log(location);
+  const path = location.pathname.startsWith('/special-buy');
+
   return (
     <nav className="nav">
       {categories.map((cat, index) => (
         <NavItem
         key={index}
         category={cat}
-        stockShown={props.stockShown}
-        updateStockShown={e => props.updateStockShown(e,true)}
+        stockShown={path}
         />
       ))}
     </nav>
@@ -66,14 +66,13 @@ const Nav = (props) => {
 };
 
 const NavItem = (props) => {
-  return (
-    <Link
-      to={`/special-buy/${props.category.name}`}
-      onClick={props.updateStockShown}
-      className="nav--item__link"
-      style={{
+  const category = props.category.name.toLowerCase().split(' ').join('-');
 
-      }}>
+  return (
+    <Link 
+      to={`/special-buy/${category}`}
+      className="nav--item__link"
+    >
       <StyledNavItem
         img={props.category.img}
         className="nav--item"
