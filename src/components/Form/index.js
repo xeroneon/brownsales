@@ -31,8 +31,7 @@ const Form = (props) => {
       body: encode({ "form-name": "contact", ...form }),
     })
       .then(() => {
-          setForm(false);
-
+          props.toggleForm(false);
         })
       .catch((error) => alert(error));
   };
