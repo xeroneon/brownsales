@@ -19,12 +19,11 @@ import {FontAwesomeIcon as FAIcon } from "@fortawesome/react-fontawesome"
 
 function App() {
     const [formOpen, toggleForm] = useState(false);
-    const [stockShown, updateStockShown ] = useState(/special-buy/.test(window.location.pathname))
 
     return (
         <>
-            <Header stockShown={stockShown} updateStockShown={(e,val) => updateStockShown(val)}/>
-            <Nav stockShown={stockShown} updateStockShown={(e,val) => updateStockShown(val)}/>
+            <Header />
+            <Nav />
             <Route path='/'>
                 <Form formOpen={formOpen}/>
             </Route>
