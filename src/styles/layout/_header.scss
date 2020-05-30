@@ -40,6 +40,14 @@
 
         h1 {
             @include brownTitle(-130px);
+
+            .special-buy-icon {
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: translate(-25%,-25%) rotate(-10deg);
+
+            }
         }
 
         h2 {
