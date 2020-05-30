@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Modal from '../Modal';
 
-const ItemCard = ({ name, imageLink, price, description }) => {
+const ItemCard = ({ name, imageLink, price, description, formOpen }) => {
   const location = useLocation();
   const pathname = location.pathname.split("/");
   const [modal, setModal] = useState(false);
@@ -12,8 +12,9 @@ const ItemCard = ({ name, imageLink, price, description }) => {
         {modal &&
             <Modal
             setModal={setModal}
+            formOpen={formOpen}
             >
-                <div className='modal' style={{zIndex: 2}}>
+                <div className='modal' style={{zIndex: 2, position: 'fixed'}}>
                     <div className="image__container__modal">
                         <img src={imageLink} alt={name} className="product--image__modal" />
                     </div>

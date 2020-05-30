@@ -31,7 +31,9 @@ function App() {
                 />
             </Route>
             <Route path='/special-buy'>
-                <Items />
+                <Items
+                formOpen={formOpen}
+                />
             </Route>
             <Brands />
             <Footer />

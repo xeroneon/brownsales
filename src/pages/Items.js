@@ -11,7 +11,7 @@ const contentfulAPI = contentful.createClient({
   accessToken: process.env.REACT_APP_SECRET,
 });
 
-const Items = () => {
+const Items = ({formOpen}) => {
   const headerRef = useRef(null);
   const itemRef = useRef(null);
   const [items, setItems] = useState();
@@ -81,6 +81,7 @@ const Items = () => {
                 return (
                   <ItemCard
                     key={ind}
+                    formOpen={formOpen}
                     price={item.fields.price}
                     name={item.fields.name}
                     description={item.fields.description}

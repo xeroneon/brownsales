@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-const Modal = ({ children, setModal }) => {
+const Modal = ({ children, setModal, formOpen }) => {
+
+    useEffect(() => {
+        setModal(() => {
+            if(formOpen) return false;
+            return true;
+        })
+    }, [formOpen])
 
     return (
         <>
