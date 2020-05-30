@@ -39,6 +39,27 @@ const StyledNavItem = styled.div`
   width: 100%;
   height: ${(props) => (props.stockShown ? "5vw" : "10vw")};
 
+  &::after {
+    content: '${props => props.category}';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255,255,255,.6);
+    z-index:4;
+    color: black;
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    transform: translateY(0);
+    transition: .15s all ease-out;
+    text-transform: capitalize;
+    text-decoration: underline;
+  }
+
   @media screen and (max-width: 1400px) {  
     height: ${(props) => (props.stockShown ? "7vw" : "12vw")};
   }
@@ -75,8 +96,9 @@ const NavItem = (props) => {
     >
       <StyledNavItem
         img={props.category.img}
-        className="nav--item"
+        className="nav--item" 
         stockShown={props.stockShown}
+        category={props.category.name}
       >
         <p className="nav--item__name">{props.category.name}</p>
       </StyledNavItem>

@@ -27,10 +27,10 @@ const Header = () => {
         </div>
       </StyledHeader>
       <div className="header--message">
-        <h1>Clearance Items In Our Phoenix Warehouse</h1>{" "}
-        <Link to="/special-buy">
+        <h1>Special buys In Our Phoenix Warehouse!</h1>{" "}
+        {/* <Link to="/special-buy">
           <h2>Up to 75% off all clearance items!</h2>
-        </Link>
+        </Link> */}
       </div>
     </>
   );
