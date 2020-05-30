@@ -6,7 +6,7 @@ const Banner = ({contentfulAPI}) => {
     useEffect(() => {
         contentfulAPI.getEntries({content_type: 'banner'})
         .then(banner => {
-            setBannerText(banner);
+            setBannerText(banner.items[banner.items.length - 1].fields.bannerText);
         })
     }, [])
 
