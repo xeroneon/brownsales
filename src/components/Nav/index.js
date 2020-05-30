@@ -38,15 +38,16 @@ const StyledNavItem = styled.div`
   background-size: cover;
   width: 100%;
   height: ${(props) => (props.stockShown ? "5vw" : "10vw")};
+  color: ${({hover}) => hover ? '#fff' : 'rgba(255,255,255,0)'};
 
   &::after {
-    content: '${props => props.category}';
+    content: '${props => props.hover ? '' : props.category}';
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(255,255,255,.6);
+    background-color: ${({hover}) => hover ? '' : 'rgba(255,255,255,.6)'};
     z-index:4;
     color: black;
     display:flex;
@@ -69,9 +70,7 @@ const StyledNavItem = styled.div`
   }
 `;
 
-const Nav = (props) => {
-  const location = useLocation();
-  const path = location.pathname.startsWith('/special-buy');
+const Nav = () => {
 
   return (
     <nav className="nav">
@@ -79,7 +78,6 @@ const Nav = (props) => {
         <NavItem
         key={index}
         category={cat}
-        stockShown={path}
         />
       ))}
     </nav>
@@ -87,6 +85,9 @@ const Nav = (props) => {
 };
 
 const NavItem = (props) => {
+  const location = useLocation();
+  const path = location.pathname.startsWith('/special-buy');
+  
   const category = props.category.name.toLowerCase().split(' ').join('-');
 
   return (
@@ -97,8 +98,9 @@ const NavItem = (props) => {
       <StyledNavItem
         img={props.category.img}
         className="nav--item" 
-        stockShown={props.stockShown}
+        stockShown={path}
         category={props.category.name}
+        hover={location.pathname.split('/')[2] === category}
       >
         <p className="nav--item__name">{props.category.name}</p>
       </StyledNavItem>
