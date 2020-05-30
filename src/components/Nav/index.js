@@ -87,7 +87,6 @@ const Nav = () => {
 const NavItem = (props) => {
   const location = useLocation();
   const path = location.pathname.startsWith('/special-buy');
-  
   const category = props.category.name.toLowerCase().split(' ').join('-');
 
   return (
