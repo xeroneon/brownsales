@@ -4,14 +4,8 @@ import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon as FAIcon } from "@fortawesome/react-fontawesome";
 import { ClipLoader as Loading } from "react-spinners";
 import ItemCard from "../components/ItemCards";
-const contentful = require("contentful");
 
-const contentfulAPI = contentful.createClient({
-  space: process.env.REACT_APP_SPACE,
-  accessToken: process.env.REACT_APP_SECRET,
-});
-
-const Items = ({formOpen}) => {
+const Items = ({formOpen, contentfulAPI}) => {
   const headerRef = useRef(null);
   const itemRef = useRef(null);
   const [items, setItems] = useState();
@@ -40,6 +34,7 @@ const Items = ({formOpen}) => {
         skip: skipItems,
       })
       .then(entries => {
+          console.log(entries)
         setTotalItems(entries.total !== 0 ? entries.total : -1);
         setShowImg(entries.total > 0 && entries.total > 3 ? 6 : 3);
         setItems((prevItems) => {
