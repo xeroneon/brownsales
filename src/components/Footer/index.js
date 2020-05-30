@@ -50,7 +50,7 @@ const Contact = () => {
 
         <div className="contact--item contact--item__address">
           <p>Address</p>
-          <a href="#" className="contact--link">
+          <a href="https://goo.gl/maps/anS5Dswaa8wzTGaQ9" className="contact--link" target="_blank" rel='noopener noreferrer'>
             Brown Sales, Inc<br></br>2626 E Washington St<br></br>2Phoenix, AZ
             85034
           </a>
