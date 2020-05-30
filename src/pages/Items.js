@@ -83,7 +83,7 @@ const Items = () => {
                     key={ind}
                     price={item.fields.price}
                     name={item.fields.name}
-                    desc={item.fields.description}
+                    description={item.fields.description}
                     imageLink={item.fields.imageLink}
                   />
                 );
