@@ -1,10 +1,4 @@
 import React, { useState } from "react";
-import styled from "styled-components";
-
-const StyledForm = styled.div`
-  visibility: ${(props) => (props.formOpen ? "visible" : "hidden")};
-
-`;
 
 const Form = (props) => {
   const [form, setForm] = useState({
@@ -58,7 +52,7 @@ const Form = (props) => {
   };
 
   return (
-    <StyledForm formOpen={props.formOpen} className="inquiry">
+    <div className="inquiry">
       {!error && confirm && (
         <div className="inquiry--confirm">
           <p>Are you sure you want to send an inquiry?</p>
@@ -152,7 +146,7 @@ const Form = (props) => {
           reset
         </button>
       </form>
-    </StyledForm>
+    </div>
   );
 };
 

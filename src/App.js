@@ -10,6 +10,7 @@ import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Brands from './components/Brands'
 import Form from './components/Form';
+import Modal from './components/Modal';
 // PAGES
 // import Home from './pages/Home';
 import Items from './pages/Items';
@@ -25,10 +26,16 @@ function App() {
             <Header />
             <Nav />
             <Route path='/'>
-                <Form
-                formOpen={formOpen}
-                toggleForm={toggleForm}
-                />
+                {formOpen &&
+                    <Modal
+                    setModal={toggleForm}
+                    >
+                        <Form
+                        formOpen={formOpen}
+                        toggleForm={toggleForm}
+                        />
+                    </Modal>
+                }
             </Route>
             <Route path='/special-buy'>
                 <Items

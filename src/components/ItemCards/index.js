@@ -7,12 +7,19 @@ const ItemCard = ({ name, imageLink, price, description, formOpen }) => {
   const pathname = location.pathname.split("/");
   const [modal, setModal] = useState(false);
 
+  
+  useEffect(() => {
+    setModal(prevState => {
+        if(formOpen) return false;
+        return prevState;
+    })
+  }, [formOpen])
+
   return (
     <>
         {modal &&
             <Modal
             setModal={setModal}
-            formOpen={formOpen}
             >
                 <div className='modal' style={{zIndex: 2, position: 'fixed'}}>
                     <div className="image__container__modal">
@@ -27,7 +34,7 @@ const ItemCard = ({ name, imageLink, price, description, formOpen }) => {
             </Modal>
         }
 
-        <div className={`${pathname[1]}-item product`} onClick={() => setModal(true)}>
+        <div className={`${pathname[1]}-item product`} onClick={() => setModal(formOpen ? false : true)}>
             <div className="product--image__container">
                 <img src={imageLink} alt={name} className="product--image" />
             </div>
