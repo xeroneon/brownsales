@@ -30,6 +30,10 @@ const ItemCard = ({ name, imageLink, price, description, formOpen }) => {
                         <h5 className="product--price__modal">${price}</h5>
                         <p className="product--description__modal">{description}</p>
                     </div>
+                    <div>
+                        <p>Come down to our Phoenix location to purchase!</p>
+                        <p>You can also Contact Us for more information!</p>
+                    </div>
                 </div>
             </Modal>
         }
