@@ -6,7 +6,7 @@ const ItemCard = ({ name, imageLink, price, description, formOpen }) => {
   const location = useLocation();
   const pathname = location.pathname.split("/");
   const [modal, setModal] = useState(false);
-
+  const limitedDescription = description.length > 75 ? description.substring(0,72) + "..." : description;
   
   useEffect(() => {
     setModal(prevState => {
@@ -45,6 +45,10 @@ const ItemCard = ({ name, imageLink, price, description, formOpen }) => {
             <div className="product--info">
                 <h4 className="product--name">{name}</h4>
                 <h5 className="product--price">${price}</h5>
+            </div>
+            <div className="product--description">
+                <p>{limitedDescription}</p>
+                <span>${price}</span>
             </div>
         </div>
     </>

@@ -46,18 +46,6 @@ const Items = ({formOpen, contentfulAPI}) => {
       });
   }, [skipItems, location.pathname]);
 
-  // useEffect(() => {
-  //     window.scrollTo(0, headerRef.current.offsetTop - 200)
-  // }, [])
-
-  // useEffect(() => {
-  //     const timedScroll = setTimeout(() =>
-  //         window.scrollTo({top: itemRef.current.offsetTop + showImg * 200 - 1200, behavior: 'smooth'})
-  //     , 500);
-
-  //     return () => clearTimeout(timedScroll);
-  // }, [showImg, location.pathname])
-
   return (
     <div className="showcase">
       <h2 className="showcase--title" ref={headerRef} >All Of Our Items</h2>
