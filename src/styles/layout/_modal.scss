@@ -1,4 +1,76 @@
 .modal {
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  position: fixed;
+  width: 75%;
+  min-height: 60vh;
+  max-height: 100vh;
+  background-color: white;
+  display: flex;
+  align-items: flex-start;
+
+  padding: 30px;
+
+  &--image {
+    max-height: 100%;
+    max-width: 100%;
+    &__container {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
+      margin: 5px;
+      padding: 10px;
+    }
+  }
+
+  &--info {
+    width: 50%;
+    padding: 10px;
+  }
+
+  &--name {
+    font-size: 28px;
+    text-transform: uppercase;
+    font-weight: lighter;
+  }
+
+  &--price {
+    font-size: 22px;
+  }
+  &--description {
+    font-size: 18px;
+    margin-top: 40px;
+  }
+
+  &--cta {
+    position: absolute;
+    bottom: 40px;
+    left: 30px;
+    // transform: translateX(-50%);
+    text-align: left;
+    font-weight: lighter;
+  }
+
+  &__overlay {
+    z-index: 36;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(4px);
+  }
+}
+.specialbuy-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+
+  transform: translate(25%,25%) rotate(10deg);
+
 }
