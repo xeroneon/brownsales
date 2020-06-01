@@ -22,6 +22,20 @@ body {
     background-color: rgb(235, 232, 232);
 }
 
+.banner {
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 1000;
+    text-align: center;
+    display: block;
+    width: 100vw;
+    background-color: black;
+    color: white;
+    text-transform: capitalize;
+    line-height: 2.6;
+    font-size: 17px;
+}
+
 .special-buy-items-wrapper  {
     margin: 25px auto;
     display: grid;
@@ -85,3 +99,4 @@ body {
     align-items: flex-start;
     padding-top: 50px;
 }
+

@@ -14,7 +14,7 @@ const Banner = ({contentfulAPI}) => {
         <>
             {bannerText &&
                 // This will be limited to 500 characters
-                <span>{bannerText}</span>
+                <span class="banner">{bannerText}</span>
             }
         </>
     )
