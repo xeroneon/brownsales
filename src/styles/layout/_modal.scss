@@ -4,7 +4,7 @@
   transform: translate(-50%, -50%);
   z-index: 100;
   position: fixed;
-  width: 75%;
+  width: 67.5%;
   min-height: 60vh;
   max-height: 100vh;
   background-color: white;
@@ -22,7 +22,7 @@
       justify-content: center;
       align-items: center;
       flex-grow: 1;
-      margin: 5px;
+      margin: 5px 30px 5px 5px;
       padding: 10px;
     }
   }
@@ -53,6 +53,7 @@
     // transform: translateX(-50%);
     text-align: left;
     font-weight: lighter;
+    opacity: .6;
   }
 
   &__overlay {
