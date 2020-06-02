@@ -27,7 +27,7 @@ const Header = () => {
         </div>
       </StyledHeader>
       <div className="header--message">
-        <h1>Special buys In Our Phoenix Warehouse!
+        <h1>Special Buys In Our Phoenix Warehouse!
           <div className="special-buy-icon">
             <img src={specialBuyIcon} alt="Special Buy"/>
           </div>
