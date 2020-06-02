@@ -46,10 +46,13 @@
             left: 50%;
             transform: translateX(-50%);
             border-radius: 7px;
-
+            
             a {
-                margin: 20px;
-
+                padding: 10px 15px;
+                
+                color: #ddd;
+                background-color: $brown-primary;
+                text-decoration: none;
             }
         }
     }
