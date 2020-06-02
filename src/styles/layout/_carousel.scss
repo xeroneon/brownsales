@@ -1,0 +1,35 @@
+.image {
+    &__carousel {
+        position: relative;
+        max-width: 50%;
+        height: 500px;
+        margin: 0 auto;
+        overflow-x: hidden;
+    }
+
+    &--one__carousel,
+    &--two__carousel,
+    &--three__carousel,
+    &--four__carousel {
+        transform: translateX(300%);
+        height: 100%;
+        position: absolute;
+        width: 100%;
+    }
+    
+    &--one__carousel.current,
+    &--two__carousel.current,
+    &--three__carousel.current,
+    &--four__carousel.current {
+        transform: translateX(0);
+        transition: transform 1s ease-out;
+    }
+
+    &--one__carousel.inactive,
+    &--two__carousel.inactive,
+    &--three__carousel.inactive,
+    &--four__carousel.inactive {
+        transform: translateX(-300%);
+        transition: transform 3.5s ease;
+    }
+}
