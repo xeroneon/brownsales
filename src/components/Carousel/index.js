@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const Carousel = ({images}) => {
+const Carousel = ({images, timeActive}) => {
     const [carouselImg, setCarouselImg] = useState(0);
 
     useEffect(() => {
@@ -9,7 +9,7 @@ const Carousel = ({images}) => {
                 if(prevImg < images.length - 1) return prevImg + 1;
                 if(prevImg === images.length - 1) return 0;
             });
-        }, 5000);
+        }, timeActive);
 
         return () => clearInterval(carouselInterval);
     })

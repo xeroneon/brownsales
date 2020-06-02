@@ -69,6 +69,7 @@ function App() {
                 {location.pathname === '/' &&
                     <CarouselContainer
                     images={imgArr}
+                    timeActive={7000}
                     >
                         <div className='carousel__heading--container'>
                             <h4 className='carousel__heading'> Brown Sales Flooring specializes in replacement flooring for the multi-family housing industry in the Phoenix Area</h4>
