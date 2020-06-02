@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import { Route, useLocation } from 'react-router-dom';
 
+import apartment from './img/apartment-carousel.jpg';
+import carpetWarehouse from './img/carpet-warehouse.jpg';
+import warehouse from './img/warehouse.jpeg';
+import building from './img/building.jpg';
+import flooring from './img/flooring.jpg';
+
+
 // STYLESHEET
 import './App.scss';
 
@@ -27,6 +34,14 @@ const contentfulAPI = contentful.createClient({
   accessToken: process.env.REACT_APP_SECRET,
 });
 
+const imgArr = [
+    {image:apartment, name: 'apartment'},
+    {image: carpetWarehouse, name: 'carpet warehouse'},
+    {image: warehouse, name: 'warehouse'},
+    {image: building, name: 'building'},
+    {image: flooring, name: 'flooring'}
+]
+
 function App() {
     const [formOpen, toggleForm] = useState(false);
     const location = useLocation();
@@ -51,7 +66,9 @@ function App() {
                     </Modal>
                 }
                 {location.pathname === '/' &&
-                    <Carousel />
+                    <Carousel
+                    images={imgArr}
+                    />
                 }
             </Route>
             <Route path='/special-buy'>
