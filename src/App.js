@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Route, useLocation } from 'react-router-dom';
 
+// CAROUSEL IMAGES
 import apartment from './img/apartment-carousel.jpg';
 import carpetWarehouse from './img/carpet-warehouse.jpg';
 import warehouse from './img/warehouse.jpeg';
@@ -25,7 +26,7 @@ import Items from './pages/Items';
 
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons"
 import {FontAwesomeIcon as FAIcon } from "@fortawesome/react-fontawesome"
-import Carousel from './components/Carousel';
+import CarouselContainer from './components/Carousel/Container';
 
 // CONTENTFUL API
 const contentful = require("contentful");
@@ -66,9 +67,15 @@ function App() {
                     </Modal>
                 }
                 {location.pathname === '/' &&
-                    <Carousel
+                    <CarouselContainer
                     images={imgArr}
-                    />
+                    >
+                        <div className='carousel__heading--container'>
+                            <h4 className='carousel__heading'> Brown Sales Flooring specializes in replacement flooring for the multi-family housing industry in the Phoenix Area</h4>
+                            <a href='https://www.brownsalesaz.com' rel='noopener noreferrer' target='_blank'>brownsalesaz.com</a>
+                        </div>
+                    </CarouselContainer>
+                    
                 }
             </Route>
             <Route path='/special-buy'>
