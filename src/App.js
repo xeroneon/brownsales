@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, useLocation } from 'react-router-dom';
 
 // STYLESHEET
 import './App.scss';
@@ -18,10 +18,10 @@ import Items from './pages/Items';
 
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons"
 import {FontAwesomeIcon as FAIcon } from "@fortawesome/react-fontawesome"
+import Carousel from './components/Carousel';
 
 // CONTENTFUL API
 const contentful = require("contentful");
-
 const contentfulAPI = contentful.createClient({
   space: process.env.REACT_APP_SPACE,
   accessToken: process.env.REACT_APP_SECRET,
@@ -29,6 +29,7 @@ const contentfulAPI = contentful.createClient({
 
 function App() {
     const [formOpen, toggleForm] = useState(false);
+    const location = useLocation();
 
     return (
         <>
@@ -48,6 +49,9 @@ function App() {
                         toggleForm={toggleForm}
                         />
                     </Modal>
+                }
+                {location.pathname === '/' &&
+                    <Carousel />
                 }
             </Route>
             <Route path='/special-buy'>
