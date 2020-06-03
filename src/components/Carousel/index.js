@@ -20,7 +20,7 @@ const Carousel = ({images, timeActive}) => {
                 <img
                 src={img.image}
                 alt={img.name}
-                className={`carousel__image--one
+                className={`carousel__image
                     ${carouselImg === ind ? 'current' : ''}
                     ${carouselImg === ind + 1 ? 'inactive' : ''}
                     ${ind === images.length - 1 && carouselImg === 0 ? 'inactive' : ''}`}

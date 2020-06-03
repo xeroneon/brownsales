@@ -8,28 +8,19 @@
         overflow-x: hidden;
     }
 
-    &__image--one,
-    &__image--two,
-    &__image--three,
-    &__image--four {
+    &__image {
         transform: translateX(1000px);
         height: 100%;
         position: absolute;
         width: 100%;
     }
     
-    &__image--one.current,
-    &__image--two.current,
-    &__image--three.current,
-    &__image--four.current {
+    &__image.current {
         transform: translateX(0);
         transition: transform 1s ease-out;
     }
 
-    &__image--one.inactive,
-    &__image--two.inactive,
-    &__image--three.inactive,
-    &__image--four.inactive {
+    &__image.inactive {
         transform: translateX(-1000px);
         transition: transform 1s ease-out;
     }
