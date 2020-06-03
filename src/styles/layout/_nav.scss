@@ -33,15 +33,15 @@
         transform: translateY(0) scale(1);
 
         border-bottom: solid 3px $brown-primary;
-        &:hover {
-            border-bottom: solid 3px rgba($brown-primary, .1);
+        // &:hover {
+        //     border-bottom: solid 3px rgba($brown-primary, .1);
 
-            transform: translateY(-5px) scale(1.05);
-            color: #fff;
-            &::after {
-                transform: translateY(100%);
-            }
-        }
+        //     transform: translateY(-5px) scale(1.05);
+        //     color: #fff;
+        //     &::after {
+        //         transform: translateY(100%);
+        //     }
+        // }
     
 
         &::before {
