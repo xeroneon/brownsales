@@ -1,4 +1,18 @@
 import React, { useState } from "react";
+import styled from "styled-components";
+
+const StyledLabel = styled.label`
+  &::before {
+    height: ${(props) => (props.hasValue ? "100%" : "4px")};
+  }
+
+  &::after {
+    opacity: ${(props) => (props.hasValue ? 1 : 0)};
+    transform: rotate(-90deg)
+      ${(props) =>
+        props.hasValue ? "translate(85%, -45%)" : "translate(50%, -20%)"};
+  }
+`;
 
 const Form = (props) => {
   const [form, setForm] = useState({
@@ -25,8 +39,8 @@ const Form = (props) => {
       body: encode({ "form-name": "contact", ...form }),
     })
       .then(() => {
-          props.toggleForm(false);
-        })
+        props.toggleForm(false);
+      })
       .catch((error) => alert(error));
   };
 
@@ -39,7 +53,9 @@ const Form = (props) => {
     if (
       !form.name.match(/([\u00c0-\u01ffA-Za-z']{1,30})\w+/g) ||
       !form.email.match(/^[\w-.]+@([\w-]+.)+[\w-]{2,4}$/) ||
-      !form.phone.match(/(\(?)([2-9{1}0-9{2}])(\)?)(-?\s?\.?)([\d{3}])(-?\s?\.?)(\d{4})/) ||
+      !form.phone.match(
+        /(\(?)([2-9{1}0-9{2}])(\)?)(-?\s?\.?)([\d{3}])(-?\s?\.?)(\d{4})/
+      ) ||
       form.message.length < 5
     ) {
       setConfirm(false);
@@ -66,12 +82,9 @@ const Form = (props) => {
           <button onClick={handleSubmit} className="inquiry--confirm__submit">
             yes I'm sure!
           </button>
-
         </div>
       )}
-      <div className="inquiry--title">
-          send us an inquiry.
-      </div>
+      <div className="inquiry--title">send us an inquiry.</div>
       <form className="inquiry--form">
         <div className="inquiry--input__container">
           <input
@@ -81,13 +94,14 @@ const Form = (props) => {
             value={form.name}
             onChange={handleInput}
           />
-          <label 
-            className="inquiry--input__label" 
+          <StyledLabel
+            className="inquiry--input__label"
             htmlFor="name"
             name="name"
+            hasValue={form.name.length > 0 ? true : false}
           >
             Name:
-          </label>
+          </StyledLabel>
         </div>
         <div className="inquiry--input__container">
           <input
@@ -97,13 +111,14 @@ const Form = (props) => {
             value={form.email}
             onChange={handleInput}
           />
-          <label 
-            className="inquiry--input__label" 
+          <StyledLabel
+            className="inquiry--input__label"
             htmlFor="email"
             name="email"
+            hasValue={form.email.length > 0 ? true : false}
           >
             Email:
-          </label>
+          </StyledLabel>
         </div>
         <div className="inquiry--input__container">
           <input
@@ -114,12 +129,14 @@ const Form = (props) => {
             value={form.phone}
             onChange={handleInput}
           />
-          <label 
-            className="inquiry--input__label" 
+          <StyledLabel
+            className="inquiry--input__label"
             htmlFor="phone"
             name="phone"
-          >Phone:
-          </label>
+            hasValue={form.phone.length > 0 ? true : false}
+          >
+            Phone:
+          </StyledLabel>
         </div>
         <div className="inquiry--input__container">
           <textarea
@@ -129,13 +146,14 @@ const Form = (props) => {
             value={form.message}
             onChange={handleInput}
           />
-          <label 
-            className="inquiry--input__label" 
+          <StyledLabel
+            className="inquiry--input__label"
             htmlFor="message"
             name="message"
+            hasValue={form.message.length > 0 ? true : false}
           >
             Message:
-          </label>
+          </StyledLabel>
         </div>
         {error && <span>{error}</span>}
 
