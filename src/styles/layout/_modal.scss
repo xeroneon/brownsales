@@ -10,8 +10,7 @@
   background-color: white;
   display: flex;
   align-items: flex-start;
-
-  padding: 30px;
+  padding: 30px 30px 100px;
 
   &--image {
     max-height: 100%;
@@ -53,7 +52,8 @@
     // transform: translateX(-50%);
     text-align: left;
     font-weight: lighter;
-    opacity: .6;
+    opacity: 0.6;
+    font-size: 16px;
   }
 
   &__overlay {
@@ -66,12 +66,77 @@
     background-color: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(4px);
   }
+  @media screen and (max-width: 1100px) {
+    min-height: 50vh;
+    width: 77.5%;
+
+    &--name {
+      font-size: 24px;
+    }
+
+    &--price {
+      font-size: 19px;
+    }
+    &--description {
+      font-size: 16px;
+      margin-top: 30px;
+    }
+  }
+
+  @media screen and (max-width: 770px) {
+    flex-direction: column-reverse;
+    width: 90%;
+    max-height: 80vh;
+    padding: 20px 10px 30px;
+    align-items: center;
+    justify-content: right;
+
+    &--image {
+      &__container {
+        width: 60%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        align-self: flex-end;
+        margin: 5px;
+        margin-right: 10px;
+        height: 250px;
+      }
+    }
+  
+    &--info {
+      width: 95%;
+    }
+
+    &--cta {
+      font-size: 13px;
+      opacity: 0.8;
+      width: 35%;
+      color: black;
+      bottom: 18%;
+    }
+
+    &--name {
+      font-size: 22px;
+    }
+
+    &--price {
+      font-size: 18px;
+    }
+    &--description {
+      font-size: 15px;
+      margin-top: 15px;
+    }
+  }
 }
 .specialbuy-icon {
   position: absolute;
   bottom: 10px;
   right: 10px;
+  width: 60px;
+  transform: translate(25%, 25%) rotate(10deg);
 
-  transform: translate(25%,25%) rotate(10deg);
-
+  @media screen and (max-width: 770px) {
+    transform: translate(-25%,-25%) rotate(10deg);
+  }
 }
