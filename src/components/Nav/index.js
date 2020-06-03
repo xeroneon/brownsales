@@ -38,27 +38,26 @@ const StyledNavItem = styled.div`
   background-size: cover;
   width: 100%;
   height: ${(props) => (props.stockShown ? "5vw" : "10vw")};
-  color: ${({hover}) => hover ? '#fff' : 'rgba(255,255,255,0)'};
+  color: ${({hover}) => !hover ? '#fff' : 'rgba(255,255,255,0)'};
 
   &::after {
-    content: '${props => props.hover ? '' : props.category}';
+    content: '${props => !props.hover ? '' : props.category}';
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    background-color: ${({hover}) => hover ? '' : 'rgba(255,255,255,.6)'};
+    background-color: ${({hover}) => !hover ? '' : 'rgba(255,255,255,.6)'};
     z-index:4;
     color: black;
     display:flex;
     flex-direction:row;
     align-items: center;
     justify-content: center;
-    font-size: 30px;
+    font-size: 18px;
     transform: translateY(0);
     transition: .15s all ease-out;
     text-transform: capitalize;
-    text-decoration: underline;
   }
 
   @media screen and (max-width: 1400px) {  
