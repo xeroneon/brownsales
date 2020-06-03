@@ -18,7 +18,7 @@ const Carousel = ({ images, timeActive }) => {
     <>
       {images.map((img, ind) => (
         <div
-          className={`carousel__image--one
+          className={`carousel__image
                 ${carouselImg === ind ? "current" : ""}
                 ${carouselImg === ind + 1 ? "inactive" : ""}
                 ${

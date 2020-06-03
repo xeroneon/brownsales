@@ -12,10 +12,7 @@
         background-color: $brown-primary;
     }
 
-    &__image--one,
-    &__image--two,
-    &__image--three,
-    &__image--four {
+    &__image {
         transform: translateX(50vw);
         height: 100%;
         position: absolute;
@@ -24,18 +21,12 @@
         display: flex;
     }
     
-    &__image--one.current,
-    &__image--two.current,
-    &__image--three.current,
-    &__image--four.current {
+    &__image.current{
         transform: translateX(0);
         transition: transform 1s ease-out;
     }
 
-    &__image--one.inactive,
-    &__image--two.inactive,
-    &__image--three.inactive,
-    &__image--four.inactive {
+    &__image.inactive {
         transform: translateX(-50vw);
         transition: transform 1s ease-out;
     }
