@@ -13,9 +13,6 @@ const Modal = ({ children, setModal }) => {
 
     return (
         <>
-            {windowWidth < 770 &&
-                <span className='modal__close' onClick={() => setModal(false)}>X</span>
-            }
             <div className='modal__overlay' onClick={() => setModal(false)}></div>
             {children}
         </>
