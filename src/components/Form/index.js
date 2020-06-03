@@ -118,7 +118,7 @@ const Form = (props) => {
             className="inquiry--input__label" 
             htmlFor="phone"
             name="phone"
-          >Phone Number:
+          >Phone:
           </label>
         </div>
         <div className="inquiry--input__container">
@@ -134,16 +134,13 @@ const Form = (props) => {
             htmlFor="message"
             name="message"
           >
-            Message to Brown Sales:
+            Message:
           </label>
         </div>
         {error && <span>{error}</span>}
 
         <button type="button" onClick={checkForm} className="inquiry--submit">
           Send
-        </button>
-        <button type="button" onClick={()=>setError()}>
-          reset
         </button>
       </form>
     </div>
