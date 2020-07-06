@@ -6,7 +6,7 @@ const Banner = ({contentfulAPI}) => {
     useEffect(() => {
         contentfulAPI.getEntries({content_type: 'banner'})
         .then(banner => {
-            setBannerText(banner.items[banner.items.length - 1].fields.bannerText);
+            setBannerText(banner.items.length > 0 ? banner.items[banner.items.length - 1].fields.bannerText : 'Welcome to Brown Sales!');
         })
     }, [])
 
