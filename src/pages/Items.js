@@ -34,7 +34,6 @@ const Items = ({formOpen, contentfulAPI}) => {
         skip: skipItems,
       })
       .then(entries => {
-          console.log(entries)
         setTotalItems(entries.total !== 0 ? entries.total : -1);
         setShowImg(entries.total > 0 && entries.total > 3 ? 6 : 3);
         setItems((prevItems) => {
@@ -76,8 +75,7 @@ const Items = ({formOpen, contentfulAPI}) => {
 
         {totalItems === -1 && (
           <p className={`special-buy-out`}>
-            All {category !== "all" ? category : ""} clearance items currently
-            sold out!
+            All {category} Special Buy items currently sold out!
           </p>
         )}
 
