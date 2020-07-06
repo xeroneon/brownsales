@@ -26,6 +26,7 @@ const Carousel = ({ images, timeActive }) => {
                     ? "inactive"
                     : ""
                 }`}
+            key={ind}
         >
           <img src={img.image} alt={img.name} />
         </div>
