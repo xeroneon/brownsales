@@ -1,6 +1,5 @@
 import React from "react";
 import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
-import { faCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon as FAIcon } from "@fortawesome/react-fontawesome";
 
 const Footer = () => {
@@ -12,9 +11,9 @@ const Footer = () => {
       </div>
 
       <div className="footer--legal">
-        <a href="#" className="privacy-policy">
+        {/* <a href="#" className="privacy-policy">
           privacy policy
-        </a>
+        </a> */}
         <p className="copyright">
           ©2019 Brown Sales, Inc. All Rights Reserved.
         </p>
