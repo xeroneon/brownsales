@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Route, useLocation } from 'react-router-dom';
+import { Route, useLocation, Switch, Redirect } from 'react-router-dom';
 
 // CAROUSEL IMAGES
 import apartment from './img/apartment-carousel.jpg';
@@ -55,36 +55,39 @@ function App() {
             contentfulAPI={contentfulAPI}
             />
 
-            <Route path='/'>
-                {formOpen &&
-                    <Modal
-                    setModal={toggleForm}
-                    >
-                        <Form
-                        formOpen={formOpen}
-                        toggleForm={toggleForm}
-                        />
-                    </Modal>
-                }
-                {location.pathname === '/' &&
-                    <CarouselContainer
-                    images={imgArr}
-                    timeActive={7000}
-                    >
-                        <div className='carousel__heading--container'>
-                            <h4 className='carousel__heading'> Brown Sales Flooring specializes in replacement flooring for the multi-family housing industry in the Phoenix Area</h4>
-                            <a href='https://www.brownsalesaz.com' rel='noopener noreferrer' target='_blank'>brownsalesaz.com</a>
-                        </div>
-                    </CarouselContainer>
-                    
-                }
-            </Route>
-            <Route path='/special-buy'>
-                <Items
-                contentfulAPI={contentfulAPI}
-                formOpen={formOpen}
-                />
-            </Route>
+            <Switch>
+                <Route path='/'>
+                    {formOpen &&
+                        <Modal
+                        setModal={toggleForm}
+                        >
+                            <Form
+                            formOpen={formOpen}
+                            toggleForm={toggleForm}
+                            />
+                        </Modal>
+                    }
+                    {location.pathname === '/' &&
+                        <CarouselContainer
+                        images={imgArr}
+                        timeActive={7000}
+                        >
+                            <div className='carousel__heading--container'>
+                                <h4 className='carousel__heading'> Brown Sales Flooring specializes in replacement flooring for the multi-family housing industry in the Phoenix Area</h4>
+                                <a href='https://www.brownsalesaz.com' rel='noopener noreferrer' target='_blank'>brownsalesaz.com</a>
+                            </div>
+                        </CarouselContainer>
+                        
+                    }
+                </Route>
+                <Route path='/special-buy'>
+                    <Items
+                    contentfulAPI={contentfulAPI}
+                    formOpen={formOpen}
+                    />
+                </Route>
+                <Redirect to='/' />
+            </Switch>
             <Brands />
             <Footer />
 
