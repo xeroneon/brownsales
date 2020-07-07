@@ -50,7 +50,7 @@ const Items = ({formOpen, contentfulAPI}) => {
       <h2 className="showcase--title" ref={headerRef} >All Of Our Items</h2>
 
       <div
-        className={`showcase--grid ${items ? "" : "loading"}`}
+        className={`showcase--grid`}
         // style={{ height: `${showImg * 200}px` }}
         ref={itemRef}
       >
@@ -71,11 +71,15 @@ const Items = ({formOpen, contentfulAPI}) => {
                   />
                 );
               })
-          : totalItems === 0 && <Loading loading={true} size={80} />}
+        : totalItems === 0 && 
+            <div className='loading'>
+                <Loading loading={true} size={80} />
+            </div>
+        }
 
         {totalItems === -1 && (
           <p className={`special-buy-out`}>
-            All {category} Special Buy items currently sold out!
+            All {category === 'all' ? '' : category.substr(0,1).toUpperCase() + category.substr(1)} Special Buy items currently sold out!
           </p>
         )}
 
