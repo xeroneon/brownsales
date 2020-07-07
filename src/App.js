@@ -55,39 +55,43 @@ function App() {
             contentfulAPI={contentfulAPI}
             />
 
-            <Switch>
-                <Route path='/'>
-                    {formOpen &&
-                        <Modal
-                        setModal={toggleForm}
-                        >
-                            <Form
-                            formOpen={formOpen}
-                            toggleForm={toggleForm}
-                            />
-                        </Modal>
-                    }
-                    {location.pathname === '/' &&
-                        <CarouselContainer
-                        images={imgArr}
-                        timeActive={7000}
-                        >
-                            <div className='carousel__heading--container'>
-                                <h4 className='carousel__heading'> Brown Sales Flooring specializes in replacement flooring for the multi-family housing industry in the Phoenix Area</h4>
-                                <a href='https://www.brownsalesaz.com' rel='noopener noreferrer' target='_blank'>brownsalesaz.com</a>
-                            </div>
-                        </CarouselContainer>
-                        
-                    }
-                </Route>
-                <Route path='/special-buy'>
-                    <Items
-                    contentfulAPI={contentfulAPI}
-                    formOpen={formOpen}
-                    />
-                </Route>
-                <Redirect to='/' />
-            </Switch>
+            <Route exact path='/'>
+                {formOpen &&
+                    <Modal
+                    setModal={toggleForm}
+                    >
+                        <Form
+                        formOpen={formOpen}
+                        toggleForm={toggleForm}
+                        />
+                    </Modal>
+                }
+                {location.pathname === '/' &&
+                    <CarouselContainer
+                    images={imgArr}
+                    timeActive={7000}
+                    >
+                        <div className='carousel__heading--container'>
+                            <h4 className='carousel__heading'> Brown Sales Flooring specializes in replacement flooring for the multi-family housing industry in the Phoenix Area</h4>
+                            <a href='https://www.brownsalesaz.com' rel='noopener noreferrer' target='_blank'>brownsalesaz.com</a>
+                        </div>
+                    </CarouselContainer>
+                    
+                }
+            </Route>
+            <Route path='/special-buy'>
+                {
+                    (location.pathname !== '/special-buy/tile' ||
+                    location.pathname !== '/special-buy/lighting' ||
+                    location.pathname !== '/special-buy/ceiling-fans' ||
+                    location.pathname !== '/special-buy/granite-&-quartz' ||
+                    location.pathname !== '/special-buy/carpet') && <Redirect to='/special-buy' />
+                }
+                <Items
+                contentfulAPI={contentfulAPI}
+                formOpen={formOpen}
+                />
+            </Route>
             <Brands />
             <Footer />
 
