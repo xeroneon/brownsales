@@ -101,14 +101,16 @@ body {
 }
 
 .loading {
+    display: flex;
     justify-content: center;
     align-items: flex-start;
     padding-top: 50px;
+    grid-column: 2/3;
 }
 
 .special-buy-out {
     grid-column: 2/3;
-    margin-top: 20px;
+    margin-top: 50px;
     text-align: center;
-    font-size: 24px;
+    font-size: 28px;
 }
