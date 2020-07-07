@@ -1,0 +1,69 @@
+
+.carousel {
+    &__image--container {
+        color: #ddd;
+        position: relative;
+        // max-width: 1000px;
+        height: 30vw;
+        width: 50vw;
+        margin: 0 auto;
+        overflow-x: hidden;
+        margin-top: 100px;
+        background-color: $brown-primary;
+    }
+
+    &__image {
+        transform: translateX(50vw);
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        display: flex;
+
+        img {
+            width: 100%;
+        }
+    }
+    
+    &__image.current{
+        transform: translateX(0);
+        transition: transform 1s ease-out;
+    }
+
+    &__image.inactive {
+        transform: translateX(-50vw);
+        transition: transform 1s ease-out;
+    }
+
+    &__heading {
+        &--container {
+            padding: 25px 35px;
+            background-color: rgba($color: #000000, $alpha: .4);
+            background: linear-gradient(to left, rgba(0,0,0,.4), rgba(0,0,0,.75));
+            position: absolute;
+            width: 100%;
+            z-index: 10;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+             border-top-left-radius: 7px;
+            border-top-right-radius: 7px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+
+            h4 {
+                font-weight: normal;
+                font-size: 18px;
+                width: 50%;
+            }
+            
+            a {
+                padding: 10px 15px;
+                font-size: 22px;
+                color: $brown-primary;
+                background-color: #ccc;
+                text-decoration: none;
+            }
+        }
+    }
+}

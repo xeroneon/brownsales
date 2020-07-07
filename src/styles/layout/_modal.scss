@@ -1,0 +1,167 @@
+.modal {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  position: fixed;
+  width: 67.5%;
+  min-height: 60vh;
+  max-height: 100vh;
+  background-color: white;
+  display: flex;
+  align-items: flex-start;
+  padding: 30px 30px 100px;
+
+  &--image {
+    max-height: 100%;
+    max-width: 100%;
+    &__container {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
+      margin: 5px 30px 5px 5px;
+      padding: 10px;
+    }
+  }
+
+  &--info {
+    width: 50%;
+    padding: 10px;
+  }
+
+  &--name {
+    font-size: 28px;
+    text-transform: uppercase;
+    font-weight: lighter;
+  }
+
+  &--price {
+    font-size: 22px;
+  }
+  &--description {
+    font-size: 18px;
+    margin-top: 40px;
+  }
+
+  &--cta {
+    position: absolute;
+    bottom: 40px;
+    left: 30px;
+    // transform: translateX(-50%);
+    text-align: left;
+    font-weight: lighter;
+    opacity: 0.6;
+    font-size: 16px;
+  }
+
+  &__overlay {
+    z-index: 36;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(4px);
+  }
+
+  &__close {
+    position: fixed;
+    top: 0;
+    right: 10px;
+    z-index: 136;
+    padding: 10px;
+    margin: 10px;
+    font-size: 24px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      background-color: white;
+      width: 44px;
+      height: 44px;
+      z-index: -1;
+      border-radius: 50%;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+    }
+  }
+  @media screen and (max-width: 1100px) {
+    min-height: 50vh;
+    width: 77.5%;
+
+    &--name {
+      font-size: 24px;
+    }
+
+    &--price {
+      font-size: 19px;
+    }
+    &--description {
+      font-size: 16px;
+      margin-top: 30px;
+    }
+  }
+
+  @media screen and (max-width: 770px) {
+    flex-direction: column-reverse;
+    width: 90%;
+    max-height: 80vh;
+    padding: 20px 10px 30px;
+    align-items: center;
+    justify-content: right;
+
+    &--image {
+      &__container {
+        width: 60%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        align-self: flex-end;
+        margin: 5px;
+        margin-right: 10px;
+        height: 250px;
+      }
+    }
+  
+    &--info {
+      width: 95%;
+    }
+
+    &--cta {
+      font-size: 13px;
+      opacity: 0.8;
+      width: 35%;
+      color: black;
+      bottom: 18%;
+    }
+
+    &--name {
+      font-size: 22px;
+      width: 72%;
+    }
+
+    &--price {
+      font-size: 18px;
+    }
+    &--description {
+      font-size: 15px;
+      margin-top: 15px;
+    }
+  }
+}
+.specialbuy-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 60px;
+  transform: translate(25%, 25%) rotate(10deg);
+
+  @media screen and (max-width: 770px) {
+    transform: translate(-25%,-25%) rotate(10deg);
+  }
+}
