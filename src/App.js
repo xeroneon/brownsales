@@ -68,7 +68,7 @@ function App() {
                             />
                         </Modal>
                     }
-                    
+
                     <CarouselContainer
                     images={imgArr}
                     timeActive={7000}
@@ -81,7 +81,7 @@ function App() {
                         
                 </Route>
 
-                <Route path='/special-buy/:category?'>
+                <Route exact path='/special-buy/:category?'>
                     <Items
                     contentfulAPI={contentfulAPI}
                     formOpen={formOpen}
