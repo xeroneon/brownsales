@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Route, useLocation, Switch, Redirect } from 'react-router-dom';
+import { Route, useLocation, useParams, Redirect, Switch } from 'react-router-dom';
 
 // CAROUSEL IMAGES
 import apartment from './img/apartment-carousel.jpg';
@@ -46,6 +46,7 @@ const imgArr = [
 function App() {
     const [formOpen, toggleForm] = useState(false);
     const location = useLocation();
+    const {category} = useParams()
 
     return (
         <>
@@ -55,18 +56,19 @@ function App() {
             contentfulAPI={contentfulAPI}
             />
 
-            <Route exact path='/'>
-                {formOpen &&
-                    <Modal
-                    setModal={toggleForm}
-                    >
-                        <Form
-                        formOpen={formOpen}
-                        toggleForm={toggleForm}
-                        />
-                    </Modal>
-                }
-                {location.pathname === '/' &&
+            <Switch>
+                <Route exact path='/'>
+                    {formOpen &&
+                        <Modal
+                        setModal={toggleForm}
+                        >
+                            <Form
+                            formOpen={formOpen}
+                            toggleForm={toggleForm}
+                            />
+                        </Modal>
+                    }
+
                     <CarouselContainer
                     images={imgArr}
                     timeActive={7000}
@@ -76,26 +78,21 @@ function App() {
                             <a href='https://www.brownsalesaz.com' rel='noopener noreferrer' target='_blank'>brownsalesaz.com</a>
                         </div>
                     </CarouselContainer>
-                    
-                }
-            </Route>
-            <Route path='/special-buy'>
-                {
-                    (location.pathname !== '/special-buy/tile' ||
-                    location.pathname !== '/special-buy/lighting' ||
-                    location.pathname !== '/special-buy/ceiling-fans' ||
-                    location.pathname !== '/special-buy/granite-&-quartz' ||
-                    location.pathname !== '/special-buy/carpet') && <Redirect to='/special-buy' />
-                }
-                <Items
-                contentfulAPI={contentfulAPI}
-                formOpen={formOpen}
-                />
-            </Route>
+                        
+                </Route>
+
+                <Route exact path='/special-buy/:category?'>
+                    <Items
+                    contentfulAPI={contentfulAPI}
+                    formOpen={formOpen}
+                    />
+                </Route>
+
+                <Redirect to='/' />
+            </Switch>
+
             <Brands />
             <Footer />
-
-            {/*  */}
 
             <FormToggle toggleForm={e => toggleForm(!formOpen)}/>
         </>
