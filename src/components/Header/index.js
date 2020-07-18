@@ -30,9 +30,7 @@ const Header = () => {
                     {image: pavers, name: 'pavers', info: 'Save up to 50% off!'},
                     {image: tile, name: 'tile', info: 'Special Buys!'}
                 ]}
-                timeActive={60000}
-                width='80vw'
-                height='40vw'
+                timeActive={6000}
             />
         :
             <StyledHeader className="header" id="Header" stockShown={path}>
