@@ -45,8 +45,6 @@ const imgArr = [
 
 function App() {
     const [formOpen, toggleForm] = useState(false);
-    const location = useLocation();
-    const {category} = useParams()
 
     return (
         <>
