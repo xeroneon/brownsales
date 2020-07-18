@@ -110,5 +110,3 @@ const NavItem = (props) => {
 };
 
 export default Nav;
-
-
