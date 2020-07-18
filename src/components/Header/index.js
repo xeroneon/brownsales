@@ -1,5 +1,9 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import CarouselContainer from "../Carousel/Container";
+import carpet from '../../img/carpet-2.jpg';
+import tile from '../../img/vinyl.jpg';
+import pavers from '../../img/pavers.jpg';
 
 import styled from "styled-components";
 import bgImage from "../../img/hero-6.jpg";
@@ -19,13 +23,26 @@ const Header = () => {
   
   return (
     <>
-      <StyledHeader className="header" id="Header" stockShown={path}>
-        <div className="header--logo__container">
-          <Link to="/">
-            <img src={logo} alt="Brown Sales, INC" className="header--logo" />
-          </Link>
-        </div>
-      </StyledHeader>
+        {location.pathname === '/' ?
+            <CarouselContainer
+                images={[
+                    {image: carpet, name: 'carpet', info: 'Save up to 70% off!'},
+                    {image: pavers, name: 'pavers', info: 'Save up to 50% off!'},
+                    {image: tile, name: 'tile', info: 'Special Buys!'}
+                ]}
+                timeActive={60000}
+                width='80vw'
+                height='40vw'
+            />
+        :
+            <StyledHeader className="header" id="Header" stockShown={path}>
+                    <div className="header--logo__container">
+                    <Link to="/">
+                        <img src={logo} alt="Brown Sales, INC" className="header--logo" />
+                    </Link>
+                    </div>
+            </StyledHeader>
+        }
       <div className="header--message">
         <h1>Special Buys In Our Phoenix Warehouse!
           <div className="special-buy-icon">
@@ -36,6 +53,7 @@ const Header = () => {
           <h2>Up to 75% off all clearance items!</h2>
         </Link> */}
       </div>
+
     </>
   );
 };
