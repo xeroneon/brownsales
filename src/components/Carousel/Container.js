@@ -1,14 +1,13 @@
 import React from 'react';
 import Carousel from '.';
 
-const CarouselContainer = ({children, images, timeActive, width, height}) => {
+const CarouselContainer = ({children, images, timeActive}) => {
 
     return (
-        <div className='carousel__image--container' style={{width: width, height: height}}>
+        <div className='carousel__image--container'>
             <Carousel
             images={images}
             timeActive={timeActive}
-            width={width}
             />
             {children}
         </div>
