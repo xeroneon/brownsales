@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
+import {Link, useLocation} from 'react-router-dom';
 
 const Carousel = ({ images, timeActive }) => {
   const [carouselImg, setCarouselImg] = useState(0);
+  const [prevImg, setprevImg] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const carouselInterval = setInterval(() => {
@@ -29,8 +32,38 @@ const Carousel = ({ images, timeActive }) => {
             key={ind}
         >
           <img src={img.image} alt={img.name} />
+          {img.info &&
+            <div className='carousel__heading--container'>
+                <div className='carousel__headings'>
+                    <h2>{img.name.substr(0,1).toUpperCase() + img.name.substr(1)}</h2>
+                    <h4 className='carousel__heading carousel__info'>{img.info}</h4>
+                </div>
+                <Link
+                to={`/special-buy/${img.name}`}
+                // className='link__special--buy'
+                >
+                    Shop now
+                </Link>
+            </div>
+          }
         </div>
       ))}
+      {/* {location.pathname === '/' && 
+      <>
+          <button
+          className='carousel__previous'
+          onClick={() => setCarouselImg(img => img === 0 ? images.length - 1 : img - 1)}
+          >
+              {'<'}
+          </button>
+          <button
+          className='carousel__next'
+          onClick={() => setCarouselImg(img => img === images.length - 1 ? 0 : img + 1)}
+          >
+              {'>'}
+          </button>
+      </>
+      } */}
     </>
   );
 };
