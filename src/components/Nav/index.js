@@ -8,6 +8,7 @@ import bgCarpet from "../../img/updatedphotos/carpet.jpg";
 import bgLighting from "../../img/updatedphotos/lighting.jpg";
 // need a new image link for below.  change to ceiling fan once one is made.  already changed name to bgFans
 import bgFans from "../../img/updatedphotos/mattresses.jpg";
+import pavers from '../../img/pavers.jpg';
 
 const categories = [
   {
@@ -30,6 +31,9 @@ const categories = [
     name: "Ceiling fans",
     img: bgFans,
   },
+  {name: 'Pavers',
+  img: pavers
+    }
 ];
 
 const StyledNavItem = styled.div`
@@ -72,12 +76,12 @@ const Nav = () => {
 
   return (
     <nav className="nav">
-      {categories.map((cat, index) => (
-        <NavItem
-        key={index}
-        category={cat}
-        />
-      ))}
+        {categories.map((cat, index) => (
+            <NavItem
+            key={index}
+            category={cat}
+            />
+        ))}      
     </nav>
   );
 };
